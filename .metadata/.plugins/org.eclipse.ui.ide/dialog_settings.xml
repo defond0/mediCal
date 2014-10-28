@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="com.android.ide.eclipse.adt.feature:23.0.4.1468518"/>
+		<item value="com.android.ide.eclipse.adt.package.feature:23.0.2.1259578"/>
+		<item value="com.android.ide.eclipse.ddms.feature:23.0.4.1468518"/>
+		<item value="com.android.ide.eclipse.hierarchyviewer.feature:23.0.4.1468518"/>
+		<item value="com.android.ide.eclipse.traceview.feature:23.0.4.1468518"/>
+		<item value="org.eclipse.cdt.gdb:8.5.0.201409172108"/>
+		<item value="org.eclipse.cdt:8.5.0.201409172108"/>
+		<item value="org.eclipse.egit.mylyn:3.5.0.201409260305-r"/>
+		<item value="org.eclipse.egit.source:3.5.0.201409260305-r"/>
+		<item value="org.eclipse.egit:3.5.0.201409260305-r"/>
+		<item value="org.eclipse.emf.common:2.10.1.v20140901-1043"/>
+		<item value="org.eclipse.emf.ecore:2.10.1.v20140901-1043"/>
+		<item value="org.eclipse.help:2.0.102.v20140925-0400"/>
+		<item value="org.eclipse.jgit.http.apache:3.5.0.201409260305-r"/>
+		<item value="org.eclipse.jgit.java7:3.5.0.201409260305-r"/>
+		<item value="org.eclipse.jgit.pgm:3.5.0.201409260305-r"/>
+		<item value="org.eclipse.jgit:3.5.0.201409260305-r"/>
+		<item value="org.eclipse.mylyn.commons.identity:1.0.3.v20130107-0100"/>
+		<item value="org.eclipse.mylyn.commons.notifications:1.0.3.v20130107-0100"/>
+		<item value="org.eclipse.mylyn.commons.repositories:1.0.3.v20130107-0100"/>
+		<item value="org.eclipse.mylyn.commons:3.8.3.v20130107-0100"/>
+		<item value="org.eclipse.mylyn.context_feature:3.8.3.v20130107-0100"/>
+		<item value="org.eclipse.mylyn.discovery:3.8.3.v20130107-0100"/>
+		<item value="org.eclipse.mylyn.monitor:3.8.3.v20130107-0100"/>
+		<item value="org.eclipse.mylyn.team_feature:3.8.3.v20130107-0100"/>
+		<item value="org.eclipse.mylyn_feature:3.8.3.v20130107-0100"/>
+		<item value="org.eclipse.platform:4.4.0.v20140925-0400"/>
+		<item value="org.eclipse.rcp:4.4.0.v20140925-0400"/>
+	</list>
+	<section name="SaveAsDialogSettings">
+		<item value="613" key="DIALOG_WIDTH"/>
+		<item value="-10" key="DIALOG_Y_ORIGIN"/>
+		<item value="191" key="DIALOG_X_ORIGIN"/>
+		<item value="596" key="DIALOG_HEIGHT"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+</section>

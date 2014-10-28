@@ -22,6 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Reminders"
+            android:label="@string/title_activity_reminders" >
+        </activity>
+        <activity
+            android:name=".Statistics"
+            android:label="@string/title_activity_statistics" >
+        </activity>
+        <activity
+            android:name=".Calibrate"
+            android:label="@string/title_activity_calibrate" >
+        </activity>
     </application>
 
 </manifest>

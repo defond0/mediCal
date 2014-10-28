@@ -2,7 +2,13 @@
 <resources>
 
     <string name="app_name">mediCal</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="callibratebutton">&quot;Callibrate&quot;</string>
+    <string name="statsbutton">Statistics </string>
+    <string name="reminderbutton">Reminders</string>
+    <string name="title_activity_reminders">Reminders</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_statistics">Statistics</string>
+    <string name="title_activity_calibrate">Calibrate</string>
 
 </resources>

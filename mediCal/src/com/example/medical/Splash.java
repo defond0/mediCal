@@ -1,6 +1,7 @@
 package com.example.medical;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.*;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +14,24 @@ public class Splash extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
     }
-
+    
+    public void toReminders(){
+    	Intent i = new Intent(this, Reminders.class);
+    	startActivity(i);
+    	this.onStop();
+    }
+    
+    public void toStatistics(){
+    	Intent i = new Intent(this, Statistics.class);
+    	startActivity(i);
+    	this.onStop();
+    }
+    
+    public void toCalibrate(){
+    	Intent i = new Intent(this, Calibrate.class);
+    	startActivity(i);
+    	this.onStop();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

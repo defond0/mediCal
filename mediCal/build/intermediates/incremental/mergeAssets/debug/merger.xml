@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="unspecified" >
+        <source path="/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/mediCal/appcompat_v7/unspecified/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/home/meanheffry/mediCal/mediCal/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/home/meanheffry/mediCal/mediCal/build-types/debug/assets" />
+    </dataSet>
+
+</merger>
