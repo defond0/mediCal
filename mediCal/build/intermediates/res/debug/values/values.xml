@@ -547,7 +547,7 @@
 
     <string name="action_settings">Settings</string>
     <string name="app_name">mediCal</string>
-    <string name="callibratebutton">"Callibrate"</string>
+    <string name="calibratebutton">"Calibrate"</string>
     <string name="hello_world">Hello world!</string>
     <string name="reminderbutton">Reminders</string>
     <string name="statsbutton">Statistics </string>

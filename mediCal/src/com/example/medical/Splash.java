@@ -5,6 +5,7 @@ import android.content.*;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Splash extends ActionBarActivity {
@@ -15,19 +16,19 @@ public class Splash extends ActionBarActivity {
         setContentView(R.layout.activity_splash);
     }
     
-    public void toReminders(){
-    	Intent i = new Intent(this, Reminders.class);
+    public void toPrescriptions(View v){
+    	Intent i = new Intent(this, Prescriptions.class);
     	startActivity(i);
     	this.onStop();
     }
     
-    public void toStatistics(){
+    public void toStatistics(View v){
     	Intent i = new Intent(this, Statistics.class);
     	startActivity(i);
     	this.onStop();
     }
     
-    public void toCalibrate(){
+    public void toCalibrate(View v){
     	Intent i = new Intent(this, Calibrate.class);
     	startActivity(i);
     	this.onStop();

@@ -1,17 +1,70 @@
 package com.example.medical;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 
-public class Calibrate extends ActionBarActivity {
+import java.util.List;
+
+public class Calibrate extends ListActivity {
+    private PillDataAccessor PDA;
+    public EditText addName;
+    public EditText addTube;
+    public EditText addDose;
+    public EditText addLoad;
+    public EditText deleteName;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+        PDA = new PillDataAccessor(this);
+        PDA.open();
+
+        // initialize edittext fields
+
+
+        List<Pill> pills = PDA.getAllPills();
+
+        ArrayAdapter<Pill> adapter = new ArrayAdapter<Pill>(this,
+                android.R.layout.simple_list_item_1, pills);
+        setListAdapter(adapter);
+
 		setContentView(R.layout.activity_calibrate);
 	}
+
+    public void onClick(View v){
+        addName = (EditText)findViewById(R.id.addName);
+        addDose = (EditText)findViewById(R.id.addDose);
+        addTube = (EditText)findViewById(R.id.addTimes);
+        addLoad = (EditText)findViewById(R.id.addLoad);
+        deleteName = (EditText)findViewById(R.id.deleteName);
+        Pill pill = null;
+        ArrayAdapter<Pill> adapter = (ArrayAdapter<Pill>) getListAdapter();
+        switch(v.getId()){
+            case R.id.add:
+                pill=PDA.createPill(addName.getText().toString(),
+                        addTube.getText().toString(),
+                        addDose.getText().toString(),addLoad.getText().toString());
+                adapter.add(pill);
+                adapter.notifyDataSetChanged();
+                break;
+            case R.id.delete:
+                pill = PDA.getPillByName(deleteName.getText().toString());
+                adapter.remove(pill);
+                PDA.deletePill(pill);
+                List<Pill> pills = PDA.getAllPills();
+                ArrayAdapter<Pill> adapter0 = new ArrayAdapter<Pill>(this,
+                        android.R.layout.simple_list_item_1, pills);
+                setListAdapter(adapter0);
+                break;
+        }
+
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
