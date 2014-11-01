@@ -2693,16 +2693,16 @@ true
                     msgid="2031811694353399454" >"Επιλέξτε κάποια εφαρμογή"
                 </string>
                 <string
+                    name="abc_searchview_description_clear"
+                    msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
+                </string>
+                <string
                     name="abc_searchview_description_voice"
                     msgid="893419373245838918" >"Φωνητική αναζήτηση"
                 </string>
                 <string
                     name="abc_action_menu_overflow_description"
                     msgid="3588849162933574182" >"Περισσότερες επιλογές"
-                </string>
-                <string
-                    name="abc_searchview_description_clear"
-                    msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
                 </string>
             </file>
             <file
@@ -5567,16 +5567,16 @@ false
                     msgid="4076576682505996667" >"Atlikta"
                 </string>
                 <string
+                    name="abc_action_bar_home_description"
+                    msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
+                </string>
+                <string
                     name="abc_searchview_description_search"
                     msgid="8264924765203268293" >"Paieška"
                 </string>
                 <string
                     name="abc_shareactionprovider_share_with_application"
                     msgid="7165123711973476752" >"Bendrinti naudojant „%s“"
-                </string>
-                <string
-                    name="abc_action_bar_home_description"
-                    msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
                 </string>
             </file>
             <file
@@ -8306,6 +8306,11 @@ useLogo|showHome|showTitle
                 qualifiers=""
                 type="menu" />
             <file
+                name="new__prescription"
+                path="/home/meanheffry/mediCal/mediCal/res/menu/new__prescription.xml"
+                qualifiers=""
+                type="menu" />
+            <file
                 name="calibrate"
                 path="/home/meanheffry/mediCal/mediCal/res/menu/calibrate.xml"
                 qualifiers=""
@@ -8322,8 +8327,18 @@ useLogo|showHome|showTitle
                 qualifiers=""
                 type="layout" />
             <file
+                name="activity_prescriptions"
+                path="/home/meanheffry/mediCal/mediCal/res/layout/activity_prescriptions.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_statistics"
                 path="/home/meanheffry/mediCal/mediCal/res/layout/activity_statistics.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_new_prescriptions"
+                path="/home/meanheffry/mediCal/mediCal/res/layout/activity_new_prescriptions.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -8386,6 +8401,8 @@ useLogo|showHome|showTitle
                 </string>
                 <string name="calibratebutton" >"Calibrate"
                 </string>
+                <string name="title_activity_new__prescription" >New_Prescription
+                </string>
                 <string name="title_activity_reminders" >Reminders
                 </string>
                 <string name="hello_world" >Hello world!
@@ -8393,16 +8410,6 @@ useLogo|showHome|showTitle
                 <string name="title_activity_statistics" >Statistics
                 </string>
             </file>
-            <file
-                name="activity_prescriptions"
-                path="/home/meanheffry/mediCal/mediCal/res/layout/activity_prescriptions.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="new_prescriptions"
-                path="/home/meanheffry/mediCal/mediCal/res/layout/new_prescriptions.xml"
-                qualifiers=""
-                type="layout" />
         </source>
         <source path="/home/meanheffry/mediCal/mediCal/build/generated/res/rs/debug" />
         <source path="/home/meanheffry/mediCal/mediCal/build/generated/res/generated/debug" />

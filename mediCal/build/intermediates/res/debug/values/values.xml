@@ -552,6 +552,7 @@
     <string name="reminderbutton">Reminders</string>
     <string name="statsbutton">Statistics </string>
     <string name="title_activity_calibrate">Calibrate</string>
+    <string name="title_activity_new__prescription">New_Prescription</string>
     <string name="title_activity_reminders">Reminders</string>
     <string name="title_activity_statistics">Statistics</string>
     <!-- From: file:/home/meanheffry/mediCal/mediCal/res/values/styles.xml -->

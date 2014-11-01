@@ -87,20 +87,17 @@
                     android:onClick="onClick"/>
             </TableRow>
         </TableLayout>
+
     </LinearLayout>
 
-
     <ListView
-
+        android:layout_width="139dp"
+        android:layout_height="67dp"
         android:id="@android:id/list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/display"
-        android:layout_alignParentBottom="true">
-
-    </ListView>
-
-
+        android:clickable="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/display" />
 
 
 </RelativeLayout>

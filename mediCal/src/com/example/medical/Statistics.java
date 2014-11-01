@@ -1,16 +1,87 @@
 package com.example.medical;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.app.ListActivity;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothManager;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.TextView;
 
-public class Statistics extends ActionBarActivity {
+import java.util.ArrayList;
+
+public class Statistics extends Activity {
+
+    private boolean scanning;
+    private Handler handler;
+    private ArrayList<BluetoothDevice> devices;
+    private BluetoothDevice mediCal;
+    private BluetoothAdapter btAdapter;
+    private static final long SCAN_PERIOD = 10000;
+    private EditText number;
+    private TextView banner;
+
+    private void scan(final boolean enable) {
+        if (enable) {
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    scanning = false;
+                    btAdapter.stopLeScan(leScanCallback);
+                }
+
+            },SCAN_PERIOD);
+            scanning = true;
+            btAdapter.startLeScan(leScanCallback);
+        }else{
+            scanning = false;
+            btAdapter.stopLeScan(leScanCallback);
+        }
+    }
+
+    private BluetoothAdapter.LeScanCallback leScanCallback = new BluetoothAdapter.LeScanCallback(){
+        @Override
+        public void onLeScan (final BluetoothDevice device, int rssi, byte[] scanRecord ){
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("-----");
+                    if ((device.getName()!=null)){
+                        banner.setText(device.getName());
+                        mediCal=device;
+                        System.out.print("device "+device);
+                        System.out.println(" device name " + device.getName());
+                    }
+                }
+            });
+        }
+    };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+        final BluetoothManager btManager = (BluetoothManager)
+                getSystemService(Context.BLUETOOTH_SERVICE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_statistics);
+        btAdapter = btManager.getAdapter();
+        handler = new Handler();
+        number= (EditText) findViewById(R.id.rotateText);
+        banner= (TextView) findViewById(R.id.banner);
+        mediCal=null;
+        if (btAdapter == null || !btAdapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, 3);
+        }
+        else{
+            scan(true);
+        }
 	}
 
 	@Override

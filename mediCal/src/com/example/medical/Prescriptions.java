@@ -1,18 +1,49 @@
 package com.example.medical;
 
 import android.app.ListActivity;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.List;
 
 public class Prescriptions extends ListActivity {
-
+    private PrescriptionDataAccessor PDA;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        PDA = new PrescriptionDataAccessor(this);
+        PDA.open();
+
+        List<Prescription> prescriptions = PDA.getAllPrescriptions();
+
+        ArrayAdapter<Prescription> adapter = new ArrayAdapter<Prescription>(this,
+                android.R.layout.simple_list_item_1, prescriptions);
+        setListAdapter(adapter);
 		setContentView(R.layout.activity_prescriptions);
 	}
+
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.add:
+                Intent i = new Intent(this, New_Prescription.class);
+                startActivity(i);
+                this.onStop();
+            break;
+        }
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        // TODO Auto-generated method stub
+        super.onListItemClick(l, v, position, id);
+    }
+
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -3,12 +3,13 @@
 
     <string name="app_name">mediCal</string>
     <string name="action_settings">Settings</string>
-    <string name="calibratebutton">&quot;Calibrate&quot;</string>
+    <string name="calibratebutton">"Calibrate"</string>
     <string name="statsbutton">Statistics </string>
     <string name="reminderbutton">Reminders</string>
     <string name="title_activity_reminders">Reminders</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_statistics">Statistics</string>
     <string name="title_activity_calibrate">Calibrate</string>
+    <string name="title_activity_new__prescription">New_Prescription</string>
 
 </resources>

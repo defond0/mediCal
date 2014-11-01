@@ -25,7 +25,6 @@ public class Calibrate extends ListActivity {
         PDA = new PillDataAccessor(this);
         PDA.open();
 
-        // initialize edittext fields
 
 
         List<Pill> pills = PDA.getAllPills();

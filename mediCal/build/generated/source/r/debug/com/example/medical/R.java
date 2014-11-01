@@ -941,18 +941,20 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f070015;
         public static final int action_menu_presenter=0x7f070016;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f07004b;
+        public static final int action_settings=0x7f070056;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int add=0x7f070042;
         public static final int addDose=0x7f070040;
         public static final int addEntry=0x7f070043;
         public static final int addLoad=0x7f070041;
         public static final int addName=0x7f07003e;
+        public static final int addPill=0x7f070050;
+        public static final int addTime=0x7f07004f;
         public static final int addTimes=0x7f07003f;
         public static final int always=0x7f07000f;
         public static final int banner=0x7f07003d;
         public static final int beginning=0x7f07000a;
-        public static final int calibrate=0x7f070046;
+        public static final int calibrate=0x7f070052;
         public static final int checkbox=0x7f07002d;
         public static final int collapseActionView=0x7f070011;
         public static final int default_activity_button=0x7f070028;
@@ -974,13 +976,20 @@ containing a value of this type.
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070029;
         public static final int middle=0x7f07000b;
+        public static final int nameRow=0x7f070047;
+        public static final int nameTable=0x7f070046;
+        public static final int nameText=0x7f070049;
         public static final int never=0x7f07000d;
         public static final int none=0x7f070009;
         public static final int normal=0x7f070000;
+        public static final int pillSpinner=0x7f07004c;
+        public static final int pillTable=0x7f07004a;
         public static final int progress_circular=0x7f070018;
         public static final int progress_horizontal=0x7f070019;
         public static final int radio=0x7f07002f;
-        public static final int reminders=0x7f070048;
+        public static final int reminders=0x7f070054;
+        public static final int rotateText=0x7f070055;
+        public static final int save=0x7f070051;
         public static final int search_badge=0x7f070032;
         public static final int search_bar=0x7f070031;
         public static final int search_button=0x7f070033;
@@ -996,11 +1005,13 @@ containing a value of this type.
         public static final int showHome=0x7f070004;
         public static final int showTitle=0x7f070006;
         public static final int split_action_bar=0x7f07001e;
-        public static final int statistics=0x7f070047;
+        public static final int statistics=0x7f070053;
         public static final int submit_area=0x7f070039;
         public static final int tabMode=0x7f070002;
-        public static final int table=0x7f070049;
-        public static final int textView2=0x7f07004a;
+        public static final int textView=0x7f07004b;
+        public static final int textView2=0x7f070048;
+        public static final int textView3=0x7f07004d;
+        public static final int timeText=0x7f07004e;
         public static final int title=0x7f07002b;
         public static final int top_action_bar=0x7f070020;
         public static final int up=0x7f070021;
@@ -1036,17 +1047,18 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_calibrate=0x7f030018;
-        public static final int activity_prescriptions=0x7f030019;
-        public static final int activity_splash=0x7f03001a;
-        public static final int activity_statistics=0x7f03001b;
-        public static final int new_prescriptions=0x7f03001c;
+        public static final int activity_new_prescriptions=0x7f030019;
+        public static final int activity_prescriptions=0x7f03001a;
+        public static final int activity_splash=0x7f03001b;
+        public static final int activity_statistics=0x7f03001c;
         public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class menu {
         public static final int calibrate=0x7f0c0000;
-        public static final int reminders=0x7f0c0001;
-        public static final int splash=0x7f0c0002;
-        public static final int statistics=0x7f0c0003;
+        public static final int new__prescription=0x7f0c0001;
+        public static final int reminders=0x7f0c0002;
+        public static final int splash=0x7f0c0003;
+        public static final int statistics=0x7f0c0004;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0a0000;
@@ -1069,8 +1081,9 @@ containing a value of this type.
         public static final int reminderbutton=0x7f0a0011;
         public static final int statsbutton=0x7f0a0012;
         public static final int title_activity_calibrate=0x7f0a0013;
-        public static final int title_activity_reminders=0x7f0a0014;
-        public static final int title_activity_statistics=0x7f0a0015;
+        public static final int title_activity_new__prescription=0x7f0a0014;
+        public static final int title_activity_reminders=0x7f0a0015;
+        public static final int title_activity_statistics=0x7f0a0016;
     }
     public static final class style {
         /** 
