@@ -45,6 +45,12 @@
             android:name="com.example.medical.New_Prescription"
             android:label="@string/title_activity_new__prescription" >
         </activity>
+
+        <service
+            android:name="com.example.medical.BluetoothGattService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>

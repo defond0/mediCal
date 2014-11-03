@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 public class Statistics extends Activity {
 
     private boolean scanning;
+    private boolean connected;
     private Handler handler;
     private ArrayList<BluetoothDevice> devices;
     private BluetoothDevice mediCal;
@@ -27,6 +30,23 @@ public class Statistics extends Activity {
     private static final long SCAN_PERIOD = 10000;
     private EditText number;
     private TextView banner;
+    private BluetoothGatt gatt;
+    private BluetoothGattService gattService;
+
+
+    private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            final String action = intent.getAction();
+            if (BluetoothGattService.ACTION_GATT_CONNECTED.equals(action)) {
+                connected = true;
+                invalidateOptionsMenu();
+            } else if (BluetoothGattService.ACTION_GATT_DISCONNECTED.equals(action)) {
+                connected = false;
+                invalidateOptionsMenu();
+            }
+        }
+    };
 
     private void scan(final boolean enable) {
         if (enable) {
@@ -49,23 +69,36 @@ public class Statistics extends Activity {
     private BluetoothAdapter.LeScanCallback leScanCallback = new BluetoothAdapter.LeScanCallback(){
         @Override
         public void onLeScan (final BluetoothDevice device, int rssi, byte[] scanRecord ){
+            devices = null;
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    System.out.println("-----");
-                    if ((device.getName()!=null)){
+
+                    if ((device.getName()!=null)) {
                         banner.setText(device.getName());
-                        mediCal=device;
-                        System.out.print("device "+device);
-                        System.out.println(" device name " + device.getName());
+                        devices.add(device);
                     }
                 }
             });
+            int s=devices.size();
+            for (int i =0;i<s;i++){
+                BluetoothDevice d = devices.get(i);
+                System.out.println("-----");
+                System.out.print("device "+d);
+                System.out.println(" device name " + d.getName());
+                System.out.println(" device size "+ devices.size());
+                if (d.getName().toLowerCase()=="medical"){
+                    banner.setText(device.getName());
+                    mediCal= d;
+                }
+            }
+
         }
     };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+        connected = false;
         final BluetoothManager btManager = (BluetoothManager)
                 getSystemService(Context.BLUETOOTH_SERVICE);
 		super.onCreate(savedInstanceState);
@@ -81,6 +114,10 @@ public class Statistics extends Activity {
         }
         else{
             scan(true);
+            if (mediCal!=null){
+                gattService = new BluetoothGattService();
+                gatt = mediCal.connectGatt(this,false,gattService.gattCallback);
+            }
         }
 	}
 

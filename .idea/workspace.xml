@@ -71,14 +71,24 @@
       <file leaf-file-name="Statistics.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/Statistics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1605">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="1815">
+              <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1435#2097#0" expanded="true" />
-                <element signature="e#1609#2079#0" expanded="true" />
-                <element signature="e#2064#2065#0" expanded="true" />
-                <element signature="e#2090#2091#0" expanded="true" />
+                <element signature="e#1110#1616#0" expanded="true" />
+                <element signature="e#1609#1610#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BluetoothGattService.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/BluetoothGattService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8908046" vertical-offset="270" max-vertical-offset="960">
+              <caret line="56" column="49" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
+              <folding>
+                <element signature="e#1361#2057#0" expanded="true" />
+                <element signature="e#2049#2050#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,54 +97,62 @@
       <file leaf-file-name="Calibrate.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/Calibrate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1260">
+            <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1380">
               <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_calibrate.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="activity_calibrate.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_calibrate.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1635">
               <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
-              <folding>
-                <element signature="e#233#266#0" expanded="true" />
-                <element signature="e#291#326#0" expanded="true" />
-                <element signature="e#352#387#0" expanded="true" />
-                <element signature="e#411#444#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_splash.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_splash.xml">
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="735">
+              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_statistics.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_statistics.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="570">
               <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
               <folding />
             </state>
           </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_prescriptions.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_prescriptions.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.692308" vertical-offset="121" max-vertical-offset="675">
+            <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="675">
               <caret line="37" column="0" selection-start-line="30" selection-start-column="4" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -1136,7 +1154,6 @@
         <option value="$PROJECT_DIR$/mediCal/src/com/example/medical/PrescriptionDataAccessor.java" />
         <option value="$PROJECT_DIR$/mediCal/src/com/example/medical/Splash.java" />
         <option value="$PROJECT_DIR$/mediCal/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/mediCal/res/layout/activity_splash.xml" />
         <option value="$PROJECT_DIR$/mediCal/src/com/example/medical/Pill.java" />
         <option value="$PROJECT_DIR$/mediCal/src/com/example/medical/DbHelper.java" />
         <option value="$PROJECT_DIR$/mediCal/src/com/example/medical/PillDataAccessor.java" />
@@ -1150,8 +1167,10 @@
         <option value="$PROJECT_DIR$/mediCal/src/com/example/medical/New_Prescription.java" />
         <option value="$PROJECT_DIR$/mediCal/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/mediCal/res/layout/activity_statistics.xml" />
-        <option value="$PROJECT_DIR$/mediCal/src/com/example/medical/Statistics.java" />
         <option value="$PROJECT_DIR$/mediCal/res/layout/activity_calibrate.xml" />
+        <option value="$PROJECT_DIR$/mediCal/res/layout/activity_splash.xml" />
+        <option value="$PROJECT_DIR$/mediCal/src/com/example/medical/BluetoothGattService.java" />
+        <option value="$PROJECT_DIR$/mediCal/src/com/example/medical/Statistics.java" />
       </list>
     </option>
   </component>
@@ -1159,8 +1178,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="297" />
-    <option name="y" value="177" />
+    <option name="x" value="231" />
+    <option name="y" value="165" />
     <option name="width" value="1269" />
     <option name="height" value="915" />
   </component>
@@ -1190,9 +1209,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1569,35 +1588,35 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="297" y="177" width="1269" height="915" extended-state="0" />
-    <editor active="true" />
+    <frame x="231" y="165" width="1269" height="915" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30204082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31625" sideWeight="0.23390383" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31375" sideWeight="0.23390383" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7009858" sideWeight="0.19429778" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19804402" sideWeight="0.09217391" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3266979" sideWeight="0.7652812" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.20875913" sideWeight="0.7728356" order="13" side_tool="false" content_ui="tabs" x="809" y="880" width="1062" height="300" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.20875913" sideWeight="0.7728356" order="13" side_tool="false" content_ui="tabs" x="809" y="808" width="1062" height="300" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329428" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.4995925" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329428" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2828036" sideWeight="0.90782607" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28606358" sideWeight="0.90782607" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31625" sideWeight="0.7660962" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30204082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1627,13 +1646,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/PillDataAccessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="760" max-vertical-offset="1425">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/TimeParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="510">
@@ -1642,19 +1654,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_calibrate.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
           <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-          <folding>
-            <element signature="e#233#266#0" expanded="true" />
-            <element signature="e#291#326#0" expanded="true" />
-            <element signature="e#352#387#0" expanded="true" />
-            <element signature="e#411#444#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/Calibrate.java">
@@ -1694,19 +1701,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_calibrate.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
           <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-          <folding>
-            <element signature="e#233#266#0" expanded="true" />
-            <element signature="e#291#326#0" expanded="true" />
-            <element signature="e#352#387#0" expanded="true" />
-            <element signature="e#411#444#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/Calibrate.java">
@@ -1746,19 +1748,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_calibrate.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="630">
           <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding>
-            <element signature="e#233#266#0" expanded="true" />
-            <element signature="e#291#326#0" expanded="true" />
-            <element signature="e#352#387#0" expanded="true" />
-            <element signature="e#411#444#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/DbHelper.java">
@@ -1798,17 +1795,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_splash.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
           <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding>
-            <element signature="e#666#684#0" expanded="false" />
-            <element signature="e#1245#1266#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/TimeParser.java">
@@ -1844,20 +1838,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_splash.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63235295" vertical-offset="327" max-vertical-offset="735">
-          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-          <folding>
-            <element signature="e#666#684#0" expanded="false" />
-            <element signature="e#1245#1266#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1954,14 +1934,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_new_prescriptions.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="2145">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/New_Prescription.java">
@@ -1984,7 +1964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="945">
           <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1993,12 +1972,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#642#660#0" expanded="true" />
-            <element signature="e#783#801#0" expanded="true" />
-            <element signature="e#1114#1148#0" expanded="true" />
-            <element signature="e#1254#1289#0" expanded="true" />
-            <element signature="e#1394#1428#0" expanded="true" />
-            <element signature="e#1540#1582#0" expanded="true" />
+            <element signature="e#663#681#0" expanded="true" />
+            <element signature="e#1134#1168#0" expanded="true" />
+            <element signature="e#1274#1309#0" expanded="true" />
+            <element signature="e#1414#1448#0" expanded="true" />
+            <element signature="e#1560#1602#0" expanded="true" />
+            <element signature="e#1720#1726#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2010,29 +1989,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_statistics.xml">
+    <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_prescriptions.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="675">
+          <caret line="37" column="0" selection-start-line="30" selection-start-column="4" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_calibrate.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1635">
+          <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_splash.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="735">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_statistics.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/Statistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1605">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1435#2097#0" expanded="true" />
-            <element signature="e#1609#2079#0" expanded="true" />
-            <element signature="e#2064#2065#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
-          </folding>
-        </state>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/Calibrate.java">
@@ -2043,29 +2041,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_prescriptions.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/Statistics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.692308" vertical-offset="121" max-vertical-offset="675">
-          <caret line="37" column="0" selection-start-line="30" selection-start-column="4" selection-end-line="37" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="1815">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+          <folding>
+            <element signature="e#1110#1616#0" expanded="true" />
+            <element signature="e#1609#1610#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mediCal/res/layout/activity_calibrate.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1635">
-          <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+    <entry file="file://$PROJECT_DIR$/mediCal/src/com/example/medical/BluetoothGattService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8908046" vertical-offset="270" max-vertical-offset="960">
+          <caret line="56" column="49" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
           <folding>
-            <element signature="e#233#266#0" expanded="true" />
-            <element signature="e#291#326#0" expanded="true" />
-            <element signature="e#352#387#0" expanded="true" />
-            <element signature="e#411#444#0" expanded="true" />
+            <element signature="e#1361#2057#0" expanded="true" />
+            <element signature="e#2049#2050#0" expanded="true" />
           </folding>
         </state>
       </provider>
