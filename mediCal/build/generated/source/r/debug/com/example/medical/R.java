@@ -941,12 +941,12 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f070015;
         public static final int action_menu_presenter=0x7f070016;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f070056;
+        public static final int action_settings=0x7f070058;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int add=0x7f070042;
-        public static final int addDose=0x7f070040;
+        public static final int addDose=0x7f070041;
         public static final int addEntry=0x7f070043;
-        public static final int addLoad=0x7f070041;
+        public static final int addLoad=0x7f070040;
         public static final int addName=0x7f07003e;
         public static final int addPill=0x7f070050;
         public static final int addTime=0x7f07004f;
@@ -954,6 +954,8 @@ containing a value of this type.
         public static final int always=0x7f07000f;
         public static final int banner=0x7f07003d;
         public static final int beginning=0x7f07000a;
+        public static final int button=0x7f070057;
+        public static final int button2=0x7f070055;
         public static final int calibrate=0x7f070052;
         public static final int checkbox=0x7f07002d;
         public static final int collapseActionView=0x7f070011;
@@ -988,7 +990,7 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f070019;
         public static final int radio=0x7f07002f;
         public static final int reminders=0x7f070054;
-        public static final int rotateText=0x7f070055;
+        public static final int rotateText=0x7f070056;
         public static final int save=0x7f070051;
         public static final int search_badge=0x7f070032;
         public static final int search_bar=0x7f070031;

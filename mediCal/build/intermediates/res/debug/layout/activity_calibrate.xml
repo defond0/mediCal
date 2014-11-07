@@ -29,6 +29,7 @@
                     android:textStyle="bold"
                     android:textSize="25sp"
                     android:singleLine="false" />
+
             </TableRow>
             <TableRow
                 android:gravity="center_horizontal">
@@ -45,14 +46,11 @@
                     android:layout_height="wrap_content"
                     android:inputType="time|textMultiLine"
                     android:hint="Tube#"
-                    android:layout_centerHorizontal="true"/>
-                <EditText
-                    android:id = "@+id/addDose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Dose"
-                    android:inputType="text"
-                    android:layout_centerHorizontal="true"/>
+                    android:layout_centerHorizontal="true"
+                    android:layout_column="2" />
+            </TableRow>
+            <TableRow android:gravity="center_horizontal">
+
                 <EditText
                     android:id = "@+id/addLoad"
                     android:layout_width="wrap_content"
@@ -60,8 +58,18 @@
                     android:hint="# of Pills"
                     android:inputType="text"
                     android:layout_centerHorizontal="true"/>
+
+                <EditText
+                    android:id = "@+id/addDose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Dose"
+                    android:inputType="text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_column="2" />
             </TableRow>
             <TableRow android:gravity="center_horizontal">
+
                 <Button
                     android:id ="@+id/add"
                     android:layout_below="@+id/addEntry"
@@ -71,6 +79,7 @@
                     android:onClick="onClick"/>
             </TableRow>
             <TableRow android:gravity="center_horizontal">
+
                 <EditText
                     android:id = "@+id/deleteName"
                     android:layout_width="match_parent"
@@ -78,13 +87,18 @@
                     android:hint="Name"
                     android:layout_centerHorizontal="true"/>
             </TableRow>
-            <TableRow android:gravity="center_horizontal">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
                 <Button
                     android:id ="@+id/delete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Delete Pill"
-                    android:onClick="onClick"/>
+                    android:onClick="onClick"
+                    android:layout_column="1" />
             </TableRow>
         </TableLayout>
 
