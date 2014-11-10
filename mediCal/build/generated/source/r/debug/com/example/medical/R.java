@@ -941,7 +941,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f070015;
         public static final int action_menu_presenter=0x7f070016;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f070058;
+        public static final int action_settings=0x7f070059;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int add=0x7f070042;
         public static final int addDose=0x7f070041;
@@ -956,6 +956,7 @@ containing a value of this type.
         public static final int beginning=0x7f07000a;
         public static final int button=0x7f070057;
         public static final int button2=0x7f070055;
+        public static final int button3=0x7f070058;
         public static final int calibrate=0x7f070052;
         public static final int checkbox=0x7f07002d;
         public static final int collapseActionView=0x7f070011;
