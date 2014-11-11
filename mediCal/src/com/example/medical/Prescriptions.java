@@ -20,7 +20,7 @@ public class Prescriptions extends ListActivity {
         PDA.open();
 
         List<Prescription> prescriptions = PDA.getAllPrescriptions();
-
+//        System.out.println(prescriptions.get(0));
         ArrayAdapter<Prescription> adapter = new ArrayAdapter<Prescription>(this,
                 android.R.layout.simple_list_item_1, prescriptions);
         setListAdapter(adapter);

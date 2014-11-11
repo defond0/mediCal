@@ -16,8 +16,7 @@ public class PrescriptionDataAccessor {
     private SQLiteDatabase db;
     private DbHelper helper;
     private String[] columns = {DbHelper.COLUMN_ID,DbHelper.COLUMN_PATIENT,
-            DbHelper.COLUMN_PILLS,
-            DbHelper.COLUMN_TIMES};
+         DbHelper.COLUMN_RFID};
 
     public PrescriptionDataAccessor(Context context){
         helper = new DbHelper(context);
@@ -32,12 +31,11 @@ public class PrescriptionDataAccessor {
         helper.close();
     }
 
-    public Prescription createPrescription(String patient, String pills, String times ){
+    public Prescription createPrescription(String patient, byte[] rfid){
         ContentValues prescriptionsValues = new ContentValues();
         prescriptionsValues.put(DbHelper.COLUMN_PATIENT, patient);
-        prescriptionsValues.put(DbHelper.COLUMN_PILLS, pills);
-        prescriptionsValues.put(DbHelper.COLUMN_TIMES, times);
-        long Idl = db.insert(DbHelper.TABLE_PILL, null, prescriptionsValues);
+        prescriptionsValues.put(DbHelper.COLUMN_RFID, rfid);
+        long Idl = db.insert(DbHelper.TABLE_PRESCRIPTION, null, prescriptionsValues);
         String Ids = String.valueOf(Idl);
         String[] whereArgs = {Ids};
         Cursor c = db.query(DbHelper.TABLE_PRESCRIPTION,
@@ -54,15 +52,14 @@ public class PrescriptionDataAccessor {
         Prescription prescription = new Prescription();
         prescription.setId(c.getLong(0));
         prescription.setPatient(c.getString(1));
-        prescription.setPills(c.getString(2));
-        prescription.setTimes(c.getString(3));
+        prescription.setRfid(c.getBlob(2));
         return prescription;
     }
 
 
     public List<Prescription> getAllPrescriptions(){
         List<Prescription> prescriptions = new ArrayList<Prescription>();
-        Cursor c = db.query(DbHelper.TABLE_PILL,null,null,null,null,null,null);
+        Cursor c = db.query(DbHelper.TABLE_PRESCRIPTION,null,null,null,null,null,null);
         c.moveToFirst();
         while(!c.isAfterLast()){
             Prescription prescription = cursorToPrescription(c);

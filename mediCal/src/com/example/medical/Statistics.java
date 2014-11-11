@@ -117,13 +117,20 @@ public class Statistics extends Activity {
 
     public void rotate(int n){
         final int q = n;
+        boolean write = writeCharacteristic(q);
+        while(!write){
+            write = writeCharacteristic(q);
+        }
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                writeCharacteristic((-1)*q);
+                boolean w =writeCharacteristic((-1) * q);
+                while(!w) {
+                    w = writeCharacteristic((-1) * q);
+                }
             }
         },500);
-        writeCharacteristic(q);
+
     }
 
 	@Override

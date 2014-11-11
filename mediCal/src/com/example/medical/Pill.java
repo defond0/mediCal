@@ -45,6 +45,6 @@ public class Pill {
 
     @Override
     public String toString() {
-        return name + ", Dosage "+dose+",with "+ load +" pills in tube"+ tube;
+        return name; //+ ", Dosage "+dose+",with "+ load +" pills in tube"+ tube;
     }
 }

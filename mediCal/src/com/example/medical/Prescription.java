@@ -1,5 +1,6 @@
 package com.example.medical;
 
+import java.util.Date;
 import java.util.Dictionary;
 
 /**
@@ -8,8 +9,7 @@ import java.util.Dictionary;
 public class Prescription {
     private long id;
     private String patient;
-    private String pills;
-    private String times;
+    private byte[] rfid;
 
     public void setId(long id) {
         this.id = id;
@@ -27,24 +27,18 @@ public class Prescription {
         return patient;
     }
 
-    public void setPills(String pills) {
-        this.pills = pills;
+    public byte[] getRfid() {
+        return rfid;
     }
 
-    public String getPills() {
-        return pills;
-    }
-
-    public void setTimes(String times) {
-        this.times = times;
-    }
-
-    public String getTimes() {
-        return times;
+    public void setRfid(byte[] rfid) {
+        this.rfid = rfid;
     }
 
     @Override
     public String toString() {
         return this.patient + " : "+ this.id;
     }
+
+
 }

@@ -17,23 +17,38 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String TABLE_PRESCRIPTION = "prescription";
     public static final String COLUMN_PATIENT= "patient";
     public static final String COLUMN_PILLS="pills";
+
+    public static final String COLUMN_RFID="rfid";
+
+    public static final String TABLE_JOIN_PRESCRIPTION_PILLS = "ppjoin";
+    public static final String COLUMN_PILL_ID="pillId";
+    public static final String COLUMN_PRESCRIPTION_ID="prescriptionId";
     public static final String COLUMN_TIMES="times";
 
     private static final String DATABASE_NAME = "pill.db";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String DATABASE_CREATE =
-            "CREATE TABLE " + TABLE_PILL + "("
+    private static final String PILL_DATABASE_CREATE =
+            "CREATE TABLE " + TABLE_PILL + " ( "
             + COLUMN_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_TUBE +" TEXT NOT NULL, "
             + COLUMN_NAME +" TEXT NOT NULL, "
-            + COLUMN_DOSE +" TEXT NOT NULL,"
-            + COLUMN_LOAD +" TEXT NOT NULL" +     "); "
-            + "CREATE TABLE "+ TABLE_PRESCRIPTION + "("
+            + COLUMN_DOSE +" TEXT NOT NULL, "
+            + COLUMN_LOAD +" TEXT NOT NULL" +     "); ";
+
+    private static final String PRESCRIPTION_DATABASE_CREATE =
+            "CREATE TABLE "+ TABLE_PRESCRIPTION + " ( "
             + COLUMN_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_PATIENT + " TEXT NOT NULL, "
-            + COLUMN_PILLS + " TEXT NOT NULL, "
-            + COLUMN_TIMES + " TEXT NOT NULL);";
+            + COLUMN_RFID + " BLOB"+");";
+
+    private static final String PRESCRIPTION_PILL_JOIN_DATABASE_CREATE =
+            "CREATE TABLE "+ TABLE_JOIN_PRESCRIPTION_PILLS + " ( "
+                    + COLUMN_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + COLUMN_PILL_ID + " INTEGER NOT NULL, "
+                    + COLUMN_PRESCRIPTION_ID + " INTEGER NOT NULL, "
+                    + COLUMN_TIMES + " TEXT NOT NULL "+");";
+
 
     public DbHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -41,7 +56,9 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(DATABASE_CREATE);
+        db.execSQL(PILL_DATABASE_CREATE);
+        db.execSQL(PRESCRIPTION_DATABASE_CREATE);
+        db.execSQL(PRESCRIPTION_PILL_JOIN_DATABASE_CREATE);
     }
 
     @Override

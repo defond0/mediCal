@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:id="@+id/button2"
+        android:id="@+id/addPill"
         android:enabled="true"
         android:onClick="submit"
         android:layout_toEndOf="@+id/rotateText"
@@ -43,9 +43,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Connect"
-        android:id="@+id/button"
+        android:id="@+id/addTime"
         android:onClick="bleSetup"
-        android:layout_below="@+id/button2"
+        android:layout_below="@+id/addPill"
         android:layout_alignParentStart="true" />
 
     <Button
@@ -53,15 +53,15 @@
         android:layout_height="wrap_content"
         android:text="Notify"
         android:id="@+id/button3"
-        android:layout_toEndOf="@+id/button"
+        android:layout_toEndOf="@+id/addTime"
         android:onClick="listen"
-        android:layout_alignTop="@+id/button" />
+        android:layout_alignTop="@+id/addTime" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/image"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/addTime"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
