@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Prescriptions"
+            android:name=".pillar.Prescriptions"
             android:label="@string/title_activity_reminders" >
         </activity>
         <activity
@@ -48,6 +48,11 @@
 
         <service
             android:name=".BluetoothGattService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+        <service
+            android:name=".pillar.mediCalBle"
             android:enabled="true"
             android:exported="true" >
         </service>

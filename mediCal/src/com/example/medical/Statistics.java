@@ -182,8 +182,6 @@ public class Statistics extends Activity {
 
     }
 
-
-
     public void listen(View v){
         System.out.println("Now Setting Notifications on");
         if (gatt.discoverServices()) {

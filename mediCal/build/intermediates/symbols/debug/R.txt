@@ -246,7 +246,7 @@ int id action_context_bar 0x7f07001d
 int id action_menu_divider 0x7f070015
 int id action_menu_presenter 0x7f070016
 int id action_mode_close_button 0x7f070024
-int id action_settings 0x7f070057
+int id action_settings 0x7f070059
 int id activity_chooser_view_content 0x7f070025
 int id add 0x7f070042
 int id addDose 0x7f070041
@@ -259,8 +259,10 @@ int id addTimes 0x7f07003f
 int id always 0x7f07000f
 int id banner 0x7f07003d
 int id beginning 0x7f07000a
-int id button3 0x7f070056
-int id calibrate 0x7f070052
+int id bleConnect 0x7f070053
+int id bleNotify 0x7f070052
+int id button3 0x7f070058
+int id calibrate 0x7f070054
 int id checkbox 0x7f07002d
 int id collapseActionView 0x7f070011
 int id default_activity_button 0x7f070028
@@ -293,8 +295,8 @@ int id pills 0x7f07004c
 int id progress_circular 0x7f070018
 int id progress_horizontal 0x7f070019
 int id radio 0x7f07002f
-int id reminders 0x7f070054
-int id rotateText 0x7f070055
+int id reminders 0x7f070056
+int id rotateText 0x7f070057
 int id save 0x7f07004a
 int id search_badge 0x7f070032
 int id search_bar 0x7f070031
@@ -311,7 +313,7 @@ int id showCustom 0x7f070007
 int id showHome 0x7f070004
 int id showTitle 0x7f070006
 int id split_action_bar 0x7f07001e
-int id statistics 0x7f070053
+int id statistics 0x7f070055
 int id submit_area 0x7f070039
 int id tabMode 0x7f070002
 int id textView2 0x7f070046

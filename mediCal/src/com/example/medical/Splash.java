@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.medical.pillar.Prescriptions;
+
 
 public class Splash extends ActionBarActivity {
 

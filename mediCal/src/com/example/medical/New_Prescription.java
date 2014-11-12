@@ -1,7 +1,5 @@
 package com.example.medical;
 
-import android.app.Dialog;
-import android.app.TimePickerDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,7 +13,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import java.util.ArrayList;
+import com.example.medical.db.Pill;
+import com.example.medical.db.PillDataAccessor;
+import com.example.medical.db.PillPrescriptionJoin;
+import com.example.medical.db.Prescription;
+import com.example.medical.db.PrescriptionDataAccessor;
+import com.example.medical.db.PrescriptionPillJoinDataAccessor;
+
 import java.util.List;
 
 

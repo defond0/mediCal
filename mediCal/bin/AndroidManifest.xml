@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Prescriptions"
+            android:name=".pillar.Prescriptions"
             android:label="@string/title_activity_reminders" >
         </activity>
         <activity

@@ -941,7 +941,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f070015;
         public static final int action_menu_presenter=0x7f070016;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f070057;
+        public static final int action_settings=0x7f070059;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int add=0x7f070042;
         public static final int addDose=0x7f070041;
@@ -954,8 +954,10 @@ containing a value of this type.
         public static final int always=0x7f07000f;
         public static final int banner=0x7f07003d;
         public static final int beginning=0x7f07000a;
-        public static final int button3=0x7f070056;
-        public static final int calibrate=0x7f070052;
+        public static final int bleConnect=0x7f070053;
+        public static final int bleNotify=0x7f070052;
+        public static final int button3=0x7f070058;
+        public static final int calibrate=0x7f070054;
         public static final int checkbox=0x7f07002d;
         public static final int collapseActionView=0x7f070011;
         public static final int default_activity_button=0x7f070028;
@@ -988,8 +990,8 @@ containing a value of this type.
         public static final int progress_circular=0x7f070018;
         public static final int progress_horizontal=0x7f070019;
         public static final int radio=0x7f07002f;
-        public static final int reminders=0x7f070054;
-        public static final int rotateText=0x7f070055;
+        public static final int reminders=0x7f070056;
+        public static final int rotateText=0x7f070057;
         public static final int save=0x7f07004a;
         public static final int search_badge=0x7f070032;
         public static final int search_bar=0x7f070031;
@@ -1006,7 +1008,7 @@ containing a value of this type.
         public static final int showHome=0x7f070004;
         public static final int showTitle=0x7f070006;
         public static final int split_action_bar=0x7f07001e;
-        public static final int statistics=0x7f070053;
+        public static final int statistics=0x7f070055;
         public static final int submit_area=0x7f070039;
         public static final int tabMode=0x7f070002;
         public static final int textView2=0x7f070046;

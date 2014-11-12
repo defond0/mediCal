@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
+import com.example.medical.db.Pill;
+import com.example.medical.db.PillDataAccessor;
+
 import java.util.List;
 
 public class Calibrate extends ListActivity {
