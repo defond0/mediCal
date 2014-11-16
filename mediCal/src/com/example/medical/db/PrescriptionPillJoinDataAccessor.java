@@ -52,9 +52,10 @@ public class PrescriptionPillJoinDataAccessor{
 
     public PillPrescriptionJoin cursorToJoin(Cursor c){
         PillPrescriptionJoin ppJoin = new PillPrescriptionJoin();
-        ppJoin.setPillId(c.getInt(0));
-        ppJoin.setPrescriptionId(c.getInt(1));
-        ppJoin.setTime(c.getString(2));
+        ppJoin.setId(c.getInt(0));
+        ppJoin.setPillId(c.getInt(1));
+        ppJoin.setPrescriptionId(c.getInt(2));
+        ppJoin.setTime(c.getString(3));
         return ppJoin;
     }
 

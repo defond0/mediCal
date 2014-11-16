@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.medical.Prescriptions"
+            android:name="com.example.medical.pillar.Prescriptions"
             android:label="@string/title_activity_reminders" >
         </activity>
         <activity
@@ -52,7 +52,7 @@
             android:exported="true" >
         </service>
         <service
-            android:name="com.example.medical.mediCalBle"
+            android:name="com.example.medical.pillar.mediCalBle"
             android:enabled="true"
             android:exported="true" >
         </service>

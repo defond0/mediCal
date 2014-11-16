@@ -117,6 +117,8 @@ public class New_Prescription extends ActionBarActivity {
     }
 
     public String parseTime(String s){
+        System.out.println(s);
+        System.out.println(s.replace("Times:", ""));
         return s.replace("Times:","");
     }
 

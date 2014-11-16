@@ -5,9 +5,18 @@ package com.example.medical.db;
  */
 public class PillPrescriptionJoin {
 
+    private int id;
     private int pillId;
     private int prescriptionId;
     private String time;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getPillId() {
         return pillId;
@@ -35,6 +44,6 @@ public class PillPrescriptionJoin {
 
     @Override
     public String toString() {
-        return "Pill Id "+ this.pillId +" Prescription Id "+ this.prescriptionId+ " Times:"+ this.time;
+        return "Pill Id "+ this.pillId +" Prescription Id "+ this.prescriptionId+ " at "+ this.time;
     }
 }

@@ -45,8 +45,8 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String PRESCRIPTION_PILL_JOIN_DATABASE_CREATE =
             "CREATE TABLE "+ TABLE_JOIN_PRESCRIPTION_PILLS + " ( "
                     + COLUMN_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + COLUMN_PILL_ID + " INTEGER NOT NULL, "
-                    + COLUMN_PRESCRIPTION_ID + " INTEGER NOT NULL, "
+                    + COLUMN_PILL_ID + " INTEGER REFERENCES "+TABLE_PILL+", "
+                    + COLUMN_PRESCRIPTION_ID + " INTEGER REFERENCES "+TABLE_PRESCRIPTION+", "
                     + COLUMN_TIMES + " TEXT NOT NULL "+");";
 
 

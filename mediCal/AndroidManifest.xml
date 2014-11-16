@@ -46,16 +46,28 @@
             android:label="@string/title_activity_new__prescription" >
         </activity>
 
-        <service
-            android:name=".BluetoothGattService"
-            android:enabled="true"
-            android:exported="true" >
-        </service>
+
         <service
             android:name=".pillar.mediCalBle"
             android:enabled="true"
             android:exported="true" >
         </service>
+        <service
+            android:name=".db.AuthenticatorService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+        <provider
+            android:authorities="com.example.app.provider"
+            android:name=".db.MedicalProvider">
+        </provider>
+
     </application>
 
 </manifest>
