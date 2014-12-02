@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/mediCal/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <attr name="actionBarDivider" format="reference" />
@@ -405,6 +405,28 @@
         <!-- The input type to set on the query text field. -->
         <attr name="android:inputType" />
     </declare-styleable>
+    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.sothree.slidinguppanel/library/2.0.2/res/values/values.xml -->
+    <eat-comment />
+
+    <declare-styleable name="SlidingUpPanelLayout">
+        <attr name="panelHeight" format="dimension" />
+        <attr name="shadowHeight" format="dimension" />
+        <attr name="paralaxOffset" format="dimension" />
+        <attr name="fadeColor" format="color" />
+        <attr name="flingVelocity" format="integer" />
+        <attr name="dragView" format="reference" />
+        <attr name="overlay" format="boolean" />
+        <attr name="anchorPoint" format="float" />
+        <attr name="initialState" format="enum">
+            <enum name="expanded" value="0" />
+            <enum name="collapsed" value="1" />
+            <enum name="anchored" value="2" />
+            <enum name="hidden" value="3" />
+        </attr>
+    </declare-styleable>
+    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <eat-comment />
+
     <declare-styleable name="Spinner">
 
         <!-- The prompt to display when the spinner's dialog is shown. -->
@@ -513,7 +535,7 @@
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/mediCal/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
@@ -569,7 +591,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/mediCal/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <style name="TextAppearance.AppCompat.Base.CompactMenu.Dialog" parent="android:TextAppearance.Medium">

@@ -7,12 +7,15 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.medical.Calibrate;
 import com.example.medical.New_Prescription;
 import com.example.medical.R;
 import com.example.medical.db.Prescription;
@@ -25,6 +28,8 @@ public class Prescriptions extends ListActivity {
     private PrescriptionDataAccessor PillDA;
     private mediCalBle pillar;
     private boolean bound;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle drawerToggle;
 
     private ServiceConnection connection = new ServiceConnection() {
 
@@ -54,8 +59,26 @@ public class Prescriptions extends ListActivity {
                 android.R.layout.simple_list_item_1, prescriptions);
         setListAdapter(adapter);
 		setContentView(R.layout.activity_prescriptions);
+
+
 	}
 
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.add:
+                Intent i = new Intent(this, New_Prescription.class);
+                startActivity(i);
+                this.onStop();
+                break;
+            case R.id.bleNotify:
+                pillar.enableDispensing();
+                break;
+            case R.id.bleConnect:
+                pillar.initialize();
+                pillar.bleSetup();
+                break;
+        }
+    }
 
 
     @Override
@@ -76,21 +99,18 @@ public class Prescriptions extends ListActivity {
         }
     }
 
-    public void onClick(View v){
-        switch (v.getId()){
-            case R.id.add:
-                Intent i = new Intent(this, New_Prescription.class);
-                startActivity(i);
-                this.onStop();
-            break;
-            case R.id.bleNotify:
-                pillar.enableDispensing();
-                break;
-            case R.id.bleConnect:
-                pillar.initialize();
-                pillar.bleSetup();
-                break;
-        }
+
+
+    public void toPrescriptions(View v){
+        Intent i = new Intent(this, Prescriptions.class);
+        startActivity(i);
+        this.onStop();
+    }
+
+    public void toCalibrate(View v){
+        Intent i = new Intent(this, Calibrate.class);
+        startActivity(i);
+        this.onStop();
     }
 
     @Override

@@ -33,13 +33,15 @@ public class PrescriptionDataAccessor {
 
     public Prescription createPrescription(String patient, byte[] rfid){
         ContentValues prescriptionsValues = new ContentValues();
+        prescriptionsValues.put(DbHelper.COLUMN_LAST_MODIFIED, DbHelper.getDateTimeString());
         prescriptionsValues.put(DbHelper.COLUMN_PATIENT, patient);
         prescriptionsValues.put(DbHelper.COLUMN_RFID, rfid);
+
         long Idl = db.insert(DbHelper.TABLE_PRESCRIPTION, null, prescriptionsValues);
         String Ids = String.valueOf(Idl);
         String[] whereArgs = {Ids};
         Cursor c = db.query(DbHelper.TABLE_PRESCRIPTION,
-                columns,DbHelper.COLUMN_ID + " = ?",
+                null,DbHelper.COLUMN_ID + " = ?",
                 whereArgs, null, null, null);
         c.moveToFirst();
         Prescription createdPrescription = cursorToPrescription(c);
@@ -51,8 +53,9 @@ public class PrescriptionDataAccessor {
     public Prescription cursorToPrescription(Cursor c){
         Prescription prescription = new Prescription();
         prescription.setId(c.getLong(0));
-        prescription.setPatient(c.getString(1));
-        prescription.setRfid(c.getBlob(2));
+        prescription.setLastModified(c.getString(1));
+        prescription.setPatient(c.getString(2));
+        prescription.setRfid(c.getBlob(3));
         return prescription;
     }
 

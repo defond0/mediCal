@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.medical"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0"
+    >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -10,6 +11,10 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -23,15 +28,15 @@
         <activity
             android:name=".Splash"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".pillar.Prescriptions"
+            android:label="Pillar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".pillar.Prescriptions"
-            android:label="@string/title_activity_reminders" >
         </activity>
         <activity
             android:name=".Statistics"
@@ -46,28 +51,42 @@
             android:label="@string/title_activity_new__prescription" >
         </activity>
 
-
         <service
             android:name=".pillar.mediCalBle"
             android:enabled="true"
             android:exported="true" >
         </service>
         <service
-            android:name=".db.AuthenticatorService"
+            android:name="com.example.medical.db.AuthenticatorService"
             android:enabled="true"
             android:exported="true" >
             <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator"/>
+                <action android:name="android.accounts.AccountAuthenticator" />
             </intent-filter>
+
             <meta-data
                 android:name="android.accounts.AccountAuthenticator"
                 android:resource="@xml/authenticator" />
         </service>
+
         <provider
-            android:authorities="com.example.app.provider"
-            android:name=".db.MedicalProvider">
+            android:name="com.example.medical.db.MedicalProvider"
+            android:authorities="com.example.mediCal.db"
+            android:exported="false"
+            android:syncable="true">
         </provider>
 
+        <service
+            android:name="com.example.medical.db.MedicalSyncService"
+            android:exported="true"
+            android:enabled="true"
+            android:process=":sync">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter"
+                android:resource="@xml/syncadapter" />
+        </service>
     </application>
 
 </manifest>

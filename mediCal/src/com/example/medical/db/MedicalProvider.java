@@ -9,6 +9,9 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by meanheffry on 11/15/14.
  */
@@ -81,6 +84,7 @@ public class MedicalProvider extends ContentProvider {
         SQLiteDatabase db = dbhelper.getWritableDatabase();
         Cursor c = qBuilder.query(db,projection,selection,selectionArgs,null,null,sortOrder);
         c.setNotificationUri(getContext().getContentResolver(),uri);
+        db.close();
         return c;
     }
 
@@ -93,6 +97,7 @@ public class MedicalProvider extends ContentProvider {
     public synchronized Uri insert(Uri uri, ContentValues values) {
         int uriType = matcher.match(uri);
         SQLiteDatabase db = dbhelper.getWritableDatabase();
+        values.put(DbHelper.COLUMN_LAST_MODIFIED, DbHelper.getDateTimeString());
         long id = 0;
         switch(uriType) {
             case PILL:
@@ -171,6 +176,7 @@ public class MedicalProvider extends ContentProvider {
     public synchronized int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
         int uriType = matcher.match(uri);
         SQLiteDatabase db = dbhelper.getWritableDatabase();
+        values.put(DbHelper.COLUMN_LAST_MODIFIED, DbHelper.getDateTimeString());
         int rowsUpdated = 0;
         String id = null;
         switch(uriType) {
@@ -219,5 +225,82 @@ public class MedicalProvider extends ContentProvider {
 
     }
 
+    public List<PillPrescriptionJoin> getJoinsByPrescriptionId(int pId){
+        List<PillPrescriptionJoin> joins = new ArrayList<PillPrescriptionJoin>();
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        String Id = String.valueOf(pId);
+        String[] whereArgs = {Id};
+        Cursor c = db.query(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS,null,null,null,null,null,null);
+        c.moveToFirst();
+        while (!c.isAfterLast()){
+            PillPrescriptionJoin join = cursorToJoin(c);
+            joins.add(join);
+            c.moveToNext();
+        }
+        c.close();
+        db.close();
+        return joins;
+    }
+
+    public PillPrescriptionJoin cursorToJoin(Cursor c){
+        PillPrescriptionJoin ppJoin = new PillPrescriptionJoin();
+        ppJoin.setId(c.getInt(0));
+        ppJoin.setLastModified(c.getString(1));
+        ppJoin.setPillId(c.getInt(2));
+        ppJoin.setPrescriptionId(c.getInt(3));
+        ppJoin.setTime(c.getString(4));
+        return ppJoin;
+    }
+
+    public Prescription cursorToPrescription(Cursor c){
+        Prescription prescription = new Prescription();
+        prescription.setId(c.getLong(0));
+        prescription.setLastModified(c.getString(1));
+        prescription.setPatient(c.getString(2));
+        prescription.setRfid(c.getBlob(3));
+        return prescription;
+    }
+
+    public List<Prescription> getAllPrescriptions(){
+        List<Prescription> prescriptions = new ArrayList<Prescription>();
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        Cursor c = db.query(DbHelper.TABLE_PRESCRIPTION,null,null,null,null,null,null);
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            Prescription prescription = cursorToPrescription(c);
+            prescriptions.add(prescription);
+            c.moveToNext();
+        }
+        c.close();
+        db.close();
+        return prescriptions;
+    }
+
+    private Pill cursorToPill(Cursor c){
+        Pill pill = new Pill();
+        pill.setId(c.getLong(0));
+        pill.setLastModified(c.getString(1));
+        pill.setTube(c.getString(2));
+        pill.setName(c.getString(3));
+        pill.setDose(c.getString(4));
+        pill.setLoad(c.getString(5));
+        return pill;
+
+    }
+
+    public List<Pill> getAllPills(){
+        List<Pill> pills = new ArrayList<Pill>();
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        Cursor c = db.query(DbHelper.TABLE_PILL,null,null,null,null,null,null);
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            Pill pill = cursorToPill(c);
+            pills.add(pill);
+            c.moveToNext();
+        }
+        c.close();
+        db.close();
+        return pills;
+    }
 
 }

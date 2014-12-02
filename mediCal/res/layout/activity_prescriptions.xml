@@ -6,54 +6,116 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.medical.pillar.Prescriptions" >
-
-    <TextView
-        android:id="@+id/banner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Prescriptions"
-        android:textSize="30sp"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:id="@+id/add"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="onClick"/>
+    tools:context="com.example.medical.pillar.Prescriptions"
+   >
 
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@android:id/list"
-        android:layout_centerHorizontal="true"
-        android:clickable="true"
-        android:layout_below="@+id/banner" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dispense"
-        android:id="@+id/bleNotify"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/add"
-        android:onClick="onClick" />
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:panelHeight="20dp"
+        sothree:shadowHeight="4dp"
+        sothree:paralaxOffset="100dp"
+        sothree:dragView="@+id/drag_menu">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Connect"
-        android:id="@+id/bleConnect"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onClick" />
+        <!-- The main content view -->
+        <RelativeLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        <TextView
+            android:id="@+id/banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prescriptions"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true" />
 
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:id="@+id/add"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:onClick="onClick"
+                android:layout_gravity="right|top" />
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@android:id/list"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:layout_below="@+id/banner"
+                android:layout_gravity="center_horizontal|top"
+            />
+        </RelativeLayout>
+        <!-- The navigation drawer -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/addpills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="Add New Pill"
+                    android:onClick="toCalibrate"
+                    android:layout_centerHorizontal="true"/>
+                <Button
+                    android:id="@+id/Prescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Prescriptions"
+                    android:onClick="toPrescriptions"
+                    android:layout_below="@id/addpills"
+                    android:layout_centerHorizontal="true"/>
+
+
+                <View
+                    android:id="@+id/bar"
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="80dp"
+                    android:background="@android:color/holo_blue_light"
+                    android:layout_below="@id/Prescription"
+                    android:layout_centerHorizontal="true"/>
+
+
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:text="Connect to Pillar"
+                    android:id="@+id/bleConnect"
+                    android:onClick="onClick"
+                    android:layout_below="@id/bar"
+                    android:layout_centerHorizontal="true"/>
+
+                <ToggleButton
+                    android:id="@+id/bleNotify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textOn="Disable Dispensing"
+                    android:textOff="Enable Dispensing"
+                    android:onClick="onClick"
+                    android:layout_below="@id/bleConnect"
+                    android:layout_centerHorizontal="true"/>
+
+            </RelativeLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 </RelativeLayout>
+
+
+

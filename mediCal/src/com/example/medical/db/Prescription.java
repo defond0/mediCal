@@ -9,6 +9,10 @@ import java.util.Dictionary;
 public class Prescription {
     private long id;
     private String patient;
+
+
+
+    private String lastModified;
     private byte[] rfid;
 
     public void setId(long id) {
@@ -33,6 +37,14 @@ public class Prescription {
 
     public void setRfid(byte[] rfid) {
         this.rfid = rfid;
+    }
+
+    public String getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(String lastModified) {
+        this.lastModified = lastModified;
     }
 
     @Override

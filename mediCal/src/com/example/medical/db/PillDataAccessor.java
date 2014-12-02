@@ -1,5 +1,7 @@
 package com.example.medical.db;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import android.content.ContentValues;
@@ -42,6 +44,7 @@ public class PillDataAccessor {
         pillsValues.put(DbHelper.COLUMN_NAME, name);
         pillsValues.put(DbHelper.COLUMN_DOSE, dose);
         pillsValues.put(DbHelper.COLUMN_LOAD, load);
+        pillsValues.put(DbHelper.COLUMN_LAST_MODIFIED, DbHelper.getDateTimeString());
         long Idl = db.insert(DbHelper.TABLE_PILL, null, pillsValues);
         String Ids = String.valueOf(Idl);
         String selectQuery = "SELECT * FROM "+DbHelper.TABLE_PILL +
@@ -66,10 +69,11 @@ public class PillDataAccessor {
     private Pill cursorToPill(Cursor c){
         Pill pill = new Pill();
         pill.setId(c.getLong(0));
-        pill.setTube(c.getString(1));
-        pill.setName(c.getString(2));
-        pill.setDose(c.getString(3));
-        pill.setLoad(c.getString(4));
+        pill.setLastModified(c.getString(1));
+        pill.setTube(c.getString(2));
+        pill.setName(c.getString(3));
+        pill.setDose(c.getString(4));
+        pill.setLoad(c.getString(5));
         return pill;
 
     }

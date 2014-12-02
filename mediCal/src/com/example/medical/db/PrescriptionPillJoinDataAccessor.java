@@ -38,11 +38,12 @@ public class PrescriptionPillJoinDataAccessor{
         joinValues.put(DbHelper.COLUMN_PILL_ID, pill);
         joinValues.put(DbHelper.COLUMN_PRESCRIPTION_ID, prescription);
         joinValues.put(DbHelper.COLUMN_TIMES, times);
+        joinValues.put(DbHelper.COLUMN_LAST_MODIFIED, DbHelper.getDateTimeString());
         long Idl = db.insert(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS, null, joinValues);
         String Ids = String.valueOf(Idl);
         String[] whereArgs = {Ids};
         Cursor c = db.query(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS,
-                columns,DbHelper.COLUMN_ID + " = ?",
+                null,DbHelper.COLUMN_ID + " = ?",
                 whereArgs, null, null, null);
         c.moveToFirst();
         PillPrescriptionJoin createdJoin = cursorToJoin(c);
@@ -53,9 +54,10 @@ public class PrescriptionPillJoinDataAccessor{
     public PillPrescriptionJoin cursorToJoin(Cursor c){
         PillPrescriptionJoin ppJoin = new PillPrescriptionJoin();
         ppJoin.setId(c.getInt(0));
-        ppJoin.setPillId(c.getInt(1));
-        ppJoin.setPrescriptionId(c.getInt(2));
-        ppJoin.setTime(c.getString(3));
+        ppJoin.setLastModified(c.getString(1));
+        ppJoin.setPillId(c.getInt(2));
+        ppJoin.setPrescriptionId(c.getInt(3));
+        ppJoin.setTime(c.getString(4));
         return ppJoin;
     }
 
@@ -63,9 +65,7 @@ public class PrescriptionPillJoinDataAccessor{
         List<PillPrescriptionJoin> joins = new ArrayList<PillPrescriptionJoin>();
         String Id = String.valueOf(pId);
         String[] whereArgs = {Id};
-        Cursor c = db.query(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS,
-                columns,DbHelper.COLUMN_PRESCRIPTION_ID + " =?",
-                whereArgs,null,null,null);
+        Cursor c = db.query(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS,null,null,null,null,null,null);
         c.moveToFirst();
         while (!c.isAfterLast()){
             PillPrescriptionJoin join = cursorToJoin(c);

@@ -5,6 +5,7 @@ package com.example.medical.db;
  */
 public class Pill {
     private long id;
+    private String lastModified;
     private String tube;
     private String name;
     private String dose;
@@ -34,13 +35,17 @@ public class Pill {
     public void setTube(String tube){
         this.tube = tube;
     }
-
     public void setLoad(String load) {
         this.load = load;
     }
-
     public String getLoad() {
         return load;
+    }
+    public String getLastModified() {
+        return lastModified;
+    }
+    public void setLastModified(String lastModified) {
+        this.lastModified = lastModified;
     }
 
     @Override

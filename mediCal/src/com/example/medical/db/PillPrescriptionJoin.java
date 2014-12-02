@@ -9,7 +9,15 @@ public class PillPrescriptionJoin {
     private int pillId;
     private int prescriptionId;
     private String time;
+    private String lastModified;
 
+    public String getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(String lastModified) {
+        this.lastModified = lastModified;
+    }
     public int getId() {
         return id;
     }
