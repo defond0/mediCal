@@ -1012,7 +1012,7 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020059;
     }
     public static final class id {
-        public static final int Prescription=0x7f08005a;
+        public static final int Prescription=0x7f08005b;
         public static final int action_bar=0x7f080020;
         public static final int action_bar_activity_content=0x7f080018;
         public static final int action_bar_container=0x7f08001f;
@@ -1024,7 +1024,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f080019;
         public static final int action_menu_presenter=0x7f08001a;
         public static final int action_mode_close_button=0x7f080028;
-        public static final int action_settings=0x7f080063;
+        public static final int action_settings=0x7f080064;
         public static final int activity_chooser_view_content=0x7f080029;
         public static final int add=0x7f080046;
         public static final int addDose=0x7f080045;
@@ -1034,16 +1034,16 @@ containing a value of this type.
         public static final int addPill=0x7f080055;
         public static final int addTime=0x7f080054;
         public static final int addTimes=0x7f080043;
-        public static final int addpills=0x7f080059;
+        public static final int addpills=0x7f08005a;
         public static final int always=0x7f08000f;
         public static final int anchored=0x7f080014;
         public static final int banner=0x7f080041;
-        public static final int bar=0x7f08005b;
+        public static final int bar=0x7f08005c;
         public static final int beginning=0x7f08000a;
-        public static final int bleConnect=0x7f08005c;
-        public static final int bleNotify=0x7f08005d;
-        public static final int button3=0x7f080062;
-        public static final int calibrate=0x7f08005e;
+        public static final int bleConnect=0x7f08005d;
+        public static final int bleNotify=0x7f08005e;
+        public static final int button3=0x7f080063;
+        public static final int calibrate=0x7f08005f;
         public static final int checkbox=0x7f080031;
         public static final int collapseActionView=0x7f080011;
         public static final int collapsed=0x7f080013;
@@ -1055,6 +1055,7 @@ containing a value of this type.
         public static final int disableHome=0x7f080008;
         public static final int display=0x7f080040;
         public static final int drag_menu=0x7f080057;
+        public static final int drawerText=0x7f080059;
         public static final int dropdown=0x7f080017;
         public static final int edit_query=0x7f080034;
         public static final int end=0x7f08000c;
@@ -1081,8 +1082,8 @@ containing a value of this type.
         public static final int progress_circular=0x7f08001c;
         public static final int progress_horizontal=0x7f08001d;
         public static final int radio=0x7f080033;
-        public static final int reminders=0x7f080060;
-        public static final int rotateText=0x7f080061;
+        public static final int reminders=0x7f080061;
+        public static final int rotateText=0x7f080062;
         public static final int save=0x7f08004e;
         public static final int search_badge=0x7f080036;
         public static final int search_bar=0x7f080035;
@@ -1100,7 +1101,7 @@ containing a value of this type.
         public static final int showTitle=0x7f080006;
         public static final int sliding_layout=0x7f080056;
         public static final int split_action_bar=0x7f080022;
-        public static final int statistics=0x7f08005f;
+        public static final int statistics=0x7f080060;
         public static final int submit_area=0x7f08003d;
         public static final int tabMode=0x7f080002;
         public static final int textView2=0x7f08004a;

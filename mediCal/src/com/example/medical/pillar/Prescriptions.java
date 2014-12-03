@@ -40,6 +40,7 @@ public class Prescriptions extends ListActivity {
             System.out.print("Bing");
             pillar = binder.getService();
             bound = true;
+
         }
 
         @Override
@@ -74,7 +75,6 @@ public class Prescriptions extends ListActivity {
                 pillar.enableDispensing();
                 break;
             case R.id.bleConnect:
-                pillar.initialize();
                 pillar.bleSetup();
                 break;
         }
@@ -84,7 +84,7 @@ public class Prescriptions extends ListActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        // Bind to LocalService
+        // Bind to mediCalBle
         Intent intent = new Intent(this, mediCalBle.class);
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
     }
@@ -98,8 +98,6 @@ public class Prescriptions extends ListActivity {
             bound = false;
         }
     }
-
-
 
     public void toPrescriptions(View v){
         Intent i = new Intent(this, Prescriptions.class);

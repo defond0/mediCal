@@ -9,15 +9,13 @@
     tools:context="com.example.medical.pillar.Prescriptions"
    >
 
-
-
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         xmlns:sothree="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        sothree:panelHeight="20dp"
+        sothree:panelHeight="30dp"
         sothree:shadowHeight="4dp"
         sothree:paralaxOffset="100dp"
         sothree:dragView="@+id/drag_menu">
@@ -61,6 +59,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/drawerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text= "Menu">
+                </TextView>
                 <Button
                     android:id="@+id/addpills"
                     android:layout_width="wrap_content"

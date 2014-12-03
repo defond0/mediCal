@@ -10,6 +10,7 @@ import com.example.medical.db.PrescriptionDataAccessor;
 import com.example.medical.db.PrescriptionPillJoinDataAccessor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by meanheffry on 11/11/14.
@@ -27,9 +28,9 @@ public class DispenserCoordinator {
 
 
 
-    private final byte[] rfid1 = new byte[]{0x1A, (byte)0xE2, 0x41, (byte)0xD9};
+    private final byte[] rfid1 = new byte[]{0x1A, (byte)0xE2, 0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
 
-    private final byte[] rfid2 = new byte[]{0x04, (byte)0x92, 0x6E, 0x7A, 0x7A, 0x31, (byte)0x80};
+    private final byte[] rfid2 = new byte[]{(byte)0xAA, 0x79, (byte)0x9B, 0x23, 0x00, 0x00, 0x00, 0x3B};
 
 
     public DispenserCoordinator(Context context){
@@ -56,12 +57,29 @@ public class DispenserCoordinator {
 
 
 
-    public int dispense(byte[] b){
-        int i = 0;
-        if(rfids.contains(b)){
+    public ArrayList<Integer> dispense(byte[] b){
+        System.out.println("Dispense request from byte "+b);
+        ArrayList<Integer> tubeNumbers = new ArrayList<Integer>();
+        ArrayList<PillPrescriptionJoin> joins = new ArrayList<PillPrescriptionJoin>();
+        long prescriptionId=0;
+//        for (int j=0; j<rfids.size();j++) {
+//            if (Arrays.equals(rfids.get(j), b)){
+//                System.out.println("It recognizes that this is one we want");
+                for (int i = 0; i < Prescriptions.size(); i++) {
+                    System.out.println("Looking for the prescription this tag belongs to");
+                    if (Arrays.equals(Prescriptions.get(i).getRfid(), b)){
 
-        }
-        return i;
+                        System.out.println("We found the Prescription");
+                        prescriptionId = Prescriptions.get(i).getId();
+                        joins = (ArrayList) JoinDA.getJoinsByPrescriptionId((int) prescriptionId);
+                    }
+                }
+                for (int i = 0; i < joins.size(); i++) {
+                    tubeNumbers.add(Integer.parseInt(PillDA.getPillById(joins.get(i).getPillId()).getTube()));
+                }
+//            }
+//        }
+        return tubeNumbers;
     }
 
 

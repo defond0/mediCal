@@ -34,6 +34,7 @@ public class mediCalBle extends Service {
     private Handler handler;
     private static final long SCAN_PERIOD = 1000;
     private BluetoothGatt gatt;
+    private long lastCallbackTime;
 
     private ArrayList<Pill> pills;
 
@@ -48,9 +49,20 @@ public class mediCalBle extends Service {
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic btchar){
             System.out.println("CALLBACK");
-            c = btchar;
-            byte[] b = c.getValue();
-            rotate(dc.dispense(b));
+            if(System.currentTimeMillis()-lastCallbackTime>=5000) {
+                c = btchar;
+                byte[] b = c.getValue();
+                ArrayList<Integer> pillsToDispense = dc.dispense(b);
+                System.out.println("We want to dispense " + pillsToDispense);
+                for (int i = 0; i < pillsToDispense.size(); i++) {
+                    dispenseTube(i);
+                }
+            }
+            else{
+                System.out.println("BOUNCE");
+            }
+
+
 
         }
     };
@@ -69,8 +81,8 @@ public class mediCalBle extends Service {
     public mediCalBle() {
     }
 
-    public void initialize(){
-
+    public void onCreate(){
+        lastCallbackTime = System.currentTimeMillis();
         dc=new DispenserCoordinator(this);
 
         s = null;
@@ -82,17 +94,17 @@ public class mediCalBle extends Service {
         btAdapter = btManager.getAdapter();
         handler = new Handler();
         pillar=null;
-
-        if (btAdapter==null){
-            assert(1==2);
+        if (btAdapter == null || !btAdapter.isEnabled()) {
+            System.out.println("Bluetooth is of not disabled");
         }
-        scan(true,this);
+        else{
+            scan(true,this);
+        }
 
     }
 
     public void bleSetup(){
         System.out.println("Beginning to Connect");
-//        pillar.fetchUuidsWithSdp();
         gatt = pillar.connectGatt(this, true, btCb);
         gatt.discoverServices();
         connected = true;
@@ -111,22 +123,12 @@ public class mediCalBle extends Service {
 
     }
 
-    public void rotate(int n){
+    public void dispenseTube(int n){
         final int q = n;
         boolean write = writeCharacteristic(q);
         while(!write){
             write = writeCharacteristic(q);
         }
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                boolean w =writeCharacteristic((-1) * q);
-                while(!w) {
-                    w = writeCharacteristic((-1) * q);
-                }
-            }
-        },500);
-
     }
 
     private boolean enableNotification(){

@@ -140,10 +140,10 @@ public class New_Prescription extends ActionBarActivity {
         System.out.println(np.getValue());
         switch (np.getValue()){
             case 1:
-                b = new byte[]{0x1A, (byte)0xE2, 0x41, (byte)0xD9};
+                b = new byte[]{0x1A, (byte)0xE2, 0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
             break;
             case 2:
-                b= new byte[]{0x04, (byte)0x92, 0x6E, 0x7A, 0x7A, 0x31, (byte)0x80};
+                b = new byte[]{(byte)0xAA, 0x79, (byte)0x9B, 0x23, 0x00, 0x00, 0x00, 0x3B};
             break;
         }
         return b;

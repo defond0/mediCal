@@ -89,7 +89,7 @@ public class PillDataAccessor {
     }
     public Pill getPillById(int id){
         Pill pill = null ;
-        String selectQuery = "SELECT * FROM pill  WHERE id  = '"+ id +"'";
+        String selectQuery = "SELECT * FROM pill  WHERE _id  = '"+ id +"'";
         Cursor c = db.rawQuery(selectQuery,null);
         if (c.moveToFirst()) {
             pill = cursorToPill(c);
