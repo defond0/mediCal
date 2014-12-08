@@ -17,9 +17,11 @@ public class PrescriptionDataAccessor {
     private DbHelper helper;
     private String[] columns = {DbHelper.COLUMN_ID,DbHelper.COLUMN_PATIENT,
          DbHelper.COLUMN_RFID};
+    private Context context;
 
     public PrescriptionDataAccessor(Context context){
         helper = new DbHelper(context);
+        this.context = context;
     }
 
 
@@ -60,6 +62,8 @@ public class PrescriptionDataAccessor {
     }
 
 
+
+
     public List<Prescription> getAllPrescriptions(){
         List<Prescription> prescriptions = new ArrayList<Prescription>();
         Cursor c = db.query(DbHelper.TABLE_PRESCRIPTION,null,null,null,null,null,null);
@@ -71,5 +75,50 @@ public class PrescriptionDataAccessor {
         }
         c.close();
         return prescriptions;
+    }
+
+    public void updatePrescription(long id, String patient, byte[] rfid){
+        System.out.println("patient, "+ patient+" rfid, "+ rfid);
+        ContentValues prescriptionsValues = new ContentValues();
+        prescriptionsValues.put(DbHelper.COLUMN_LAST_MODIFIED, DbHelper.getDateTimeString());
+        prescriptionsValues.put(DbHelper.COLUMN_PATIENT, patient);
+        prescriptionsValues.put(DbHelper.COLUMN_RFID, rfid);
+        db.update(DbHelper.TABLE_PRESCRIPTION, prescriptionsValues, DbHelper.COLUMN_ID + " = " + id , null);
+
+    }
+
+    public Prescription getPrescriptionbyId(long id){
+        String[] whereArgs = new String[]{String.valueOf(id)};
+        Cursor c = db.query(DbHelper.TABLE_PRESCRIPTION,null,DbHelper.COLUMN_ID+ " = ?", whereArgs, null,null,null);
+        c.moveToFirst();
+        return cursorToPrescription(c);
+    }
+
+    public void deletePrescriptionSafe(Long id){
+        String[] whereArgs = new String[]{String.valueOf(id)};
+        Cursor c=db.query(DbHelper.TABLE_PRESCRIPTION, null,
+                DbHelper.COLUMN_ID + " = ?", whereArgs, null, null, null);
+        c.moveToFirst();
+        if (!c.isAfterLast()) {
+            Prescription p = cursorToPrescription(c);
+            PrescriptionPillJoinDataAccessor JDA = new PrescriptionPillJoinDataAccessor(context);
+            JDA.open();
+            JDA.getAllJoins();
+            ArrayList<PillPrescriptionJoin> joins = (ArrayList) JDA.getAllJoins();
+            for (int j = 0; j < joins.size(); j++) {
+                if (joins.get(j).getPrescriptionId() == id) {
+                    System.out.println("Deleting join " + joins.get(j) + " associated with " + p.getPatient());
+                    whereArgs = new String[]{String.valueOf(joins.get(j).getId())};
+                    db.delete(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS, DbHelper.COLUMN_ID + " =?", whereArgs);
+                }
+            }
+            System.out.println("Deleted Prescription " + p);
+            whereArgs = new String[]{String.valueOf(p.getId())};
+            db.delete(DbHelper.TABLE_PRESCRIPTION, DbHelper.COLUMN_ID + " =?", whereArgs);
+        }
+        else{
+            System.out.println("da fuck?");
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 package com.example.medical;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,7 +24,7 @@ import com.example.medical.db.PrescriptionPillJoinDataAccessor;
 import java.util.List;
 
 
-public class New_Prescription extends ActionBarActivity {
+public class New_Prescription extends Activity  {
     private PrescriptionDataAccessor PresDA;
     private PillDataAccessor PillDA;
     private PrescriptionPillJoinDataAccessor JoinDA;

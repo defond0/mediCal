@@ -2,17 +2,23 @@
 <pre-dex-items>
 
     <item
-        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-f189b688ce4c2b097041ed4b65a42f133bbc81a8.jar"
-        jar="/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/library-2.4.0-619587ca0e312f52659f16caf1c833d0e55e41e0.jar"
+        jar="/home/meanheffry/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+        revision="21.0.0"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb"/>
     <item
-        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/classes-2e9c299c9f9e0b6629fe511ba30e52598c547ad1.jar"
-        jar="/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/classes-7b2a30af64c51ac0b976d907a82a90fa11afe747.jar"
+        jar="/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.sothree.slidinguppanel/library/2.0.4/classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+        revision="21.0.0"
+        sha1="0e546fc8dc1f68c39d41c544e2155c797b558492"/>
+    <item
+        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/classes-d5d51eaa0b081a0b153ad09a393c9fb6b20b090e.jar"
+        jar="/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/classes.jar"
+        jumboMode="false"
+        revision="21.0.0"
+        sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3"/>
     <item
         dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/library-2.4.0-619587ca0e312f52659f16caf1c833d0e55e41e0.jar"
         jar="/home/meanheffry/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
@@ -20,22 +26,22 @@
         revision="20.0.0"
         sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb"/>
     <item
-        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/classes-ebb2f418896238f05c3fc5bd2bd9361933efd0a5.jar"
-        jar="/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/classes.jar"
+        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-08c33d9c6bdce437c513a4c56f6293bcff1c0306.jar"
+        jar="/home/meanheffry/androidsdk/android-studio/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
+        revision="21.0.0"
+        sha1="99373741f99a0556ee293c41e8faa1ca3ae8a4e6"/>
     <item
-        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-8508d418fc60db3279817074e974f19e9d17cc7c.jar"
-        jar="/home/meanheffry/androidsdk/android-studio/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-e65682aca1d8102eb0f3fa280464af39a09feb3b.jar"
+        jar="/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/libs/internal_impl-21.0.2.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+        revision="21.0.0"
+        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f"/>
     <item
-        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/classes-b373be08dc5817e28c7c8060fbd254989a3b24a4.jar"
-        jar="/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.sothree.slidinguppanel/library/2.0.2/classes.jar"
+        dex="/home/meanheffry/mediCal/mediCal/build/intermediates/pre-dexed/debug/classes-6158e56ee411a718b61cf05d1b1e726b83d56898.jar"
+        jar="/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="579a13f257d393fa870a50809656089cdbeb7506"/>
+        revision="21.0.0"
+        sha1="7ae2d38807a43b2f2185ff4089a92c790b579e54"/>
 
 </pre-dex-items>

@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,16 +18,18 @@ import com.example.medical.New_Prescription;
 import com.example.medical.R;
 import com.example.medical.db.Prescription;
 import com.example.medical.db.PrescriptionDataAccessor;
-import com.example.medical.pillar.mediCalBle;
 
 import java.util.List;
 
 public class Prescriptions extends ListActivity {
-    private PrescriptionDataAccessor PillDA;
+    private PrescriptionDataAccessor PDA;
     private mediCalBle pillar;
     private boolean bound;
-    private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle drawerToggle;
+    private  List<Prescription> prescriptions;
+
+    public final static String PATIENT="Patient";
+    public final static String RFID="Rfid";
+    public final static String ID="id";
 
     private ServiceConnection connection = new ServiceConnection() {
 
@@ -52,17 +52,20 @@ public class Prescriptions extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-        PillDA = new PrescriptionDataAccessor(this);
-        PillDA.open();
+        PDA = new PrescriptionDataAccessor(this);
+        PDA.open();
 
-        List<Prescription> prescriptions = PillDA.getAllPrescriptions();
+        prescriptions = PDA.getAllPrescriptions();
         ArrayAdapter<Prescription> adapter = new ArrayAdapter<Prescription>(this,
                 android.R.layout.simple_list_item_1, prescriptions);
         setListAdapter(adapter);
+
 		setContentView(R.layout.activity_prescriptions);
 
 
 	}
+
+
 
     public void onClick(View v){
         switch (v.getId()){
@@ -115,6 +118,14 @@ public class Prescriptions extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         // TODO Auto-generated method stub
         super.onListItemClick(l, v, position, id);
+            System.out.println("CLICKED "+prescriptions.get(position));
+            Prescription prescription = prescriptions.get(position);
+            Intent intent = new Intent(Prescriptions.this, ShowPrescription.class);
+            intent.putExtra(PATIENT, prescription.getPatient());
+            intent.putExtra(RFID, prescription.getRfid());
+            intent.putExtra(ID, prescription.getId());
+            startActivity(intent);
+
     }
 
 	@Override

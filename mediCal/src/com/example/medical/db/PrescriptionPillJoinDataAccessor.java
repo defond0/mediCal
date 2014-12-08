@@ -61,11 +61,27 @@ public class PrescriptionPillJoinDataAccessor{
         return ppJoin;
     }
 
-    public List<PillPrescriptionJoin> getJoinsByPrescriptionId(int pId){
+    public void delete(long joinId){
+        System.out.println("Deleting join " + joinId);
+        String[] whereArgs = new String[]{String.valueOf(joinId)};
+        db.delete(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS, DbHelper.COLUMN_ID + " =?", whereArgs);
+    }
+
+    public PillPrescriptionJoin getJoinbyId(long joinId){
+        String[] whereArgs = new String[]{String.valueOf(joinId)};
+        System.out.println(whereArgs);
+
+        Cursor c = db.query(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS,null,DbHelper.COLUMN_ID+ " = ?", whereArgs, null,null,null);
+        System.out.println(c);
+        c.moveToFirst();
+        return cursorToJoin(c);
+    }
+
+    public List<PillPrescriptionJoin> getJoinsByPrescriptionId(long pId){
         List<PillPrescriptionJoin> joins = new ArrayList<PillPrescriptionJoin>();
         String Id = String.valueOf(pId);
         String[] whereArgs = {Id};
-        Cursor c = db.query(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS,null,null,null,null,null,null);
+        Cursor c = db.query(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS,null,DbHelper.COLUMN_PRESCRIPTION_ID + " = ?",whereArgs,null,null,null);
         c.moveToFirst();
         while (!c.isAfterLast()){
             PillPrescriptionJoin join = cursorToJoin(c);

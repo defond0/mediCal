@@ -8,28 +8,28 @@ package com.sothree.slidinguppanel.library;
 
 public final class R {
 	public static final class attr {
-		public static final int anchorPoint = 0x7f010069;
-		public static final int dragView = 0x7f010067;
-		public static final int fadeColor = 0x7f010065;
-		public static final int flingVelocity = 0x7f010066;
-		public static final int initialState = 0x7f01006a;
-		public static final int overlay = 0x7f010068;
-		public static final int panelHeight = 0x7f010062;
-		public static final int paralaxOffset = 0x7f010064;
-		public static final int shadowHeight = 0x7f010063;
+		public static final int anchorPoint = 0x7f010044;
+		public static final int dragView = 0x7f010042;
+		public static final int fadeColor = 0x7f010040;
+		public static final int flingVelocity = 0x7f010041;
+		public static final int initialState = 0x7f010045;
+		public static final int overlay = 0x7f010043;
+		public static final int panelHeight = 0x7f01003d;
+		public static final int paralaxOffset = 0x7f01003f;
+		public static final int shadowHeight = 0x7f01003e;
 	}
 	public static final class drawable {
-		public static final int above_shadow = 0x7f020057;
-		public static final int below_shadow = 0x7f020058;
+		public static final int above_shadow = 0x7f020033;
+		public static final int below_shadow = 0x7f020034;
 	}
 	public static final class id {
-		public static final int anchored = 0x7f080014;
-		public static final int collapsed = 0x7f080013;
-		public static final int expanded = 0x7f080012;
-		public static final int hidden = 0x7f080015;
+		public static final int anchored = 0x7f09001b;
+		public static final int collapsed = 0x7f09001c;
+		public static final int expanded = 0x7f09001d;
+		public static final int hidden = 0x7f09001e;
 	}
 	public static final class styleable {
-		public static final int[] SlidingUpPanelLayout = { 0x7f010062, 0x7f010063, 0x7f010064, 0x7f010065, 0x7f010066, 0x7f010067, 0x7f010068, 0x7f010069, 0x7f01006a };
+		public static final int[] SlidingUpPanelLayout = { 0x7f01003d, 0x7f01003e, 0x7f01003f, 0x7f010040, 0x7f010041, 0x7f010042, 0x7f010043, 0x7f010044, 0x7f010045 };
 		public static final int SlidingUpPanelLayout_anchorPoint = 7;
 		public static final int SlidingUpPanelLayout_dragView = 5;
 		public static final int SlidingUpPanelLayout_fadeColor = 3;

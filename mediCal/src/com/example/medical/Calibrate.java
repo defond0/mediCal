@@ -44,7 +44,6 @@ public class Calibrate extends ListActivity {
         addDose = (EditText)findViewById(R.id.addDose);
         addTube = (EditText)findViewById(R.id.addTimes);
         addLoad = (EditText)findViewById(R.id.addLoad);
-        deleteName = (EditText)findViewById(R.id.deleteName);
         Pill pill = null;
         ArrayAdapter<Pill> adapter = (ArrayAdapter<Pill>) getListAdapter();
         switch(v.getId()){

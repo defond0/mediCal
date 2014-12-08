@@ -88,6 +88,23 @@
                 android:name="android.content.SyncAdapter"
                 android:resource="@xml/syncadapter" />
         </service>
+
+        <activity
+            android:name="com.example.medical.pillar.EditPrescriptions"
+            android:label="@string/title_activity_edit_prescriptions" >
+        </activity>
+        <activity
+            android:name="com.example.medical.pillar.ShowPrescription"
+            android:label="@string/title_activity_show_prescription" >
+        </activity>
+        <activity
+            android:name="com.example.medical.pillar.ShowJoin"
+            android:label="@string/title_activity_show_join" >
+        </activity>
+        <activity
+            android:name="com.example.medical.pillar.EditJoin"
+            android:label="@string/title_activity_edit_join" >
+        </activity>
     </application>
 
 </manifest>

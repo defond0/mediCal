@@ -5,9 +5,9 @@ package com.example.medical.db;
  */
 public class PillPrescriptionJoin {
 
-    private int id;
-    private int pillId;
-    private int prescriptionId;
+    private long id;
+    private long pillId;
+    private long prescriptionId;
     private String time;
     private String lastModified;
 
@@ -18,27 +18,27 @@ public class PillPrescriptionJoin {
     public void setLastModified(String lastModified) {
         this.lastModified = lastModified;
     }
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getPillId() {
+    public long getPillId() {
         return pillId;
     }
 
-    public void setPillId(int pillId) {
+    public void setPillId(long pillId) {
         this.pillId = pillId;
     }
 
-    public int getPrescriptionId() {
+    public long getPrescriptionId() {
         return prescriptionId;
     }
 
-    public void setPrescriptionId(int prescriptionId) {
+    public void setPrescriptionId(long prescriptionId) {
         this.prescriptionId = prescriptionId;
     }
 

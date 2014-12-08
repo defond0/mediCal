@@ -8,8 +8,12 @@
     <string name="reminderbutton">Reminders</string>
     <string name="title_activity_reminders">Reminders</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_statistics">Statistics</string>
-    <string name="title_activity_calibrate">Calibrate</string>
-    <string name="title_activity_new__prescription">New_Prescription</string>
+    <string name="title_activity_statistics">BleDemo</string>
+    <string name="title_activity_calibrate">Pill Manager</string>
+    <string name="title_activity_new__prescription">New Prescription</string>
+    <string name="title_activity_edit_prescriptions">Edit Prescriptions</string>
+    <string name="title_activity_show_prescription">ShowPrescription</string>
+    <string name="title_activity_show_join">ShowJoin</string>
+    <string name="title_activity_edit_join">EditJoin</string>
 
 </resources>
