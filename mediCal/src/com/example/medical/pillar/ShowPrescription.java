@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
+import com.example.medical.Calibrate;
 import com.example.medical.R;
 import com.example.medical.db.PillPrescriptionJoin;
 import com.example.medical.db.Prescription;
@@ -57,7 +58,7 @@ public class ShowPrescription extends ListActivity {
             Rfid.setText("RFID: 2");
         }
         joins = (ArrayList)joindDA.getJoinsByPrescriptionId(prescriptionId);
-        System.out.println(joins);
+        System.out.println("Loading "+joins);
         ArrayAdapter<Prescription> adapter = new ArrayAdapter<Prescription>(this,
                 android.R.layout.simple_list_item_1, joins);
         setListAdapter(adapter);
@@ -87,9 +88,30 @@ public class ShowPrescription extends ListActivity {
                 startActivity(intent);
                 this.onStop();
                 break;
+            case R.id.addJoin:
+                Intent intentj = new Intent(ShowPrescription.this, NewJoin.class);
+                intentj.putExtra(Prescriptions.PATIENT, patient);
+                intentj.putExtra(Prescriptions.RFID, rfid);
+                intentj.putExtra(Prescriptions.ID, prescriptionId);
+                startActivity(intentj);
+                this.onStop();
+                break;
         }
 
     }
+
+    public void toPrescriptions(View v){
+        Intent i = new Intent(this, Prescriptions.class);
+        startActivity(i);
+        this.onStop();
+    }
+
+    public void toCalibrate(View v){
+        Intent i = new Intent(this, Calibrate.class);
+        startActivity(i);
+        this.onStop();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

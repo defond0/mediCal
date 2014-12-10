@@ -59,4 +59,10 @@
         <item name="android:background">#4444B7</item>
     </style>
 
+    <style name="buttonStyle" parent="@android:style/Widget.Holo.Light.Button.Small">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

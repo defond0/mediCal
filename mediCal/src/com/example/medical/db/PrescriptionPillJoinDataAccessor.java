@@ -69,9 +69,10 @@ public class PrescriptionPillJoinDataAccessor{
 
     public PillPrescriptionJoin getJoinbyId(long joinId){
         String[] whereArgs = new String[]{String.valueOf(joinId)};
-        System.out.println(whereArgs);
-
-        Cursor c = db.query(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS,null,DbHelper.COLUMN_ID+ " = ?", whereArgs, null,null,null);
+        System.out.println(whereArgs[0]);
+        String selectQuery = "SELECT * FROM "+ DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS +" WHERE _id  = '"+ joinId +"'";
+        Cursor c = db.rawQuery(selectQuery,null);
+//        Cursor c = db.query(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS,null,DbHelper.COLUMN_ID+ " = ?", whereArgs, null,null,null);
         System.out.println(c);
         c.moveToFirst();
         return cursorToJoin(c);

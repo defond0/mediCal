@@ -832,12 +832,12 @@
                     msgid="2550479030709304392" >"Որոնման հարցում"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with"
-                    msgid="3421042268587513524" >"Տարածել"
-                </string>
-                <string
                     name="abc_action_bar_home_description_format"
                     msgid="1397052879051804371" >"%1$s, %2$s"
+                </string>
+                <string
+                    name="abc_shareactionprovider_share_with"
+                    msgid="3421042268587513524" >"Տարածել"
                 </string>
                 <string
                     name="abc_searchview_description_clear"
@@ -1689,24 +1689,24 @@ false
                 path="/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/res/values-pl/values.xml"
                 qualifiers="pl" >
                 <string
-                    name="abc_action_menu_overflow_description"
-                    msgid="3588849162933574182" >"Więcej opcji"
-                </string>
-                <string
                     name="abc_activity_chooser_view_see_all"
                     msgid="7468859129482906941" >"Zobacz wszystkie"
+                </string>
+                <string
+                    name="abc_action_menu_overflow_description"
+                    msgid="3588849162933574182" >"Więcej opcji"
                 </string>
                 <string
                     name="abc_action_bar_home_description_format"
                     msgid="1397052879051804371" >"%1$s, %2$s"
                 </string>
                 <string
-                    name="abc_action_bar_up_description"
-                    msgid="1594238315039666878" >"Przejdź wyżej"
-                </string>
-                <string
                     name="abc_searchview_description_query"
                     msgid="2550479030709304392" >"Wyszukiwane hasło"
+                </string>
+                <string
+                    name="abc_action_bar_up_description"
+                    msgid="1594238315039666878" >"Przejdź wyżej"
                 </string>
                 <string
                     name="abc_activitychooserview_choose_application"
@@ -1729,12 +1729,12 @@ false
                     msgid="8928215447528550784" >"Wyślij zapytanie"
                 </string>
                 <string
-                    name="abc_action_bar_home_subtitle_description_format"
-                    msgid="6623331958280229229" >"%1$s, %2$s, %3$s"
-                </string>
-                <string
                     name="abc_searchview_description_clear"
                     msgid="3691816814315814921" >"Wyczyść zapytanie"
+                </string>
+                <string
+                    name="abc_action_bar_home_subtitle_description_format"
+                    msgid="6623331958280229229" >"%1$s, %2$s, %3$s"
                 </string>
                 <string
                     name="abc_shareactionprovider_share_with"
@@ -4487,20 +4487,20 @@ false
                     msgid="7468859129482906941" >"सबै हेर्नुहोस्"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with_application"
-                    msgid="7165123711973476752" >"%s सँग साझेदारी गर्नुहोस्"
-                </string>
-                <string
                     name="abc_action_bar_home_description"
                     msgid="4600421777120114993" >"गृह खोज्नुहोस्"
                 </string>
                 <string
-                    name="abc_searchview_description_voice"
-                    msgid="893419373245838918" >"भ्वाइस खोजी"
+                    name="abc_shareactionprovider_share_with_application"
+                    msgid="7165123711973476752" >"%s सँग साझेदारी गर्नुहोस्"
                 </string>
                 <string
                     name="abc_searchview_description_clear"
                     msgid="3691816814315814921" >"प्रश्‍न हटाउनुहोस्"
+                </string>
+                <string
+                    name="abc_searchview_description_voice"
+                    msgid="893419373245838918" >"भ्वाइस खोजी"
                 </string>
                 <string
                     name="abc_searchview_description_query"
@@ -12549,6 +12549,20 @@ true
 #FFC299
                     </item>
                 </style>
+
+                <style
+                    name="buttonStyle"
+                    parent="@android:style/Widget.Holo.Light.Button.Small" >
+                    <item name="android:textColor">
+#FFFFFF
+                    </item>
+                    <item name="android:textSize">
+12sp
+                    </item>
+                    <item name="android:textStyle">
+bold
+                    </item>
+                </style>
             </file>
             <file
                 name="ic_action_name"
@@ -12607,8 +12621,18 @@ true
                 qualifiers=""
                 type="menu" />
             <file
+                name="show_join"
+                path="/home/meanheffry/mediCal/mediCal/res/menu/show_join.xml"
+                qualifiers=""
+                type="menu" />
+            <file
                 name="reminders"
                 path="/home/meanheffry/mediCal/mediCal/res/menu/reminders.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="edit_join"
+                path="/home/meanheffry/mediCal/mediCal/res/menu/edit_join.xml"
                 qualifiers=""
                 type="menu" />
             <file
@@ -12632,6 +12656,11 @@ true
                 qualifiers=""
                 type="menu" />
             <file
+                name="new_join"
+                path="/home/meanheffry/mediCal/mediCal/res/menu/new_join.xml"
+                qualifiers=""
+                type="menu" />
+            <file
                 name="calibrate"
                 path="/home/meanheffry/mediCal/mediCal/res/menu/calibrate.xml"
                 qualifiers=""
@@ -12642,6 +12671,11 @@ true
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
+            <file
+                name="activity_edit_join"
+                path="/home/meanheffry/mediCal/mediCal/res/layout/activity_edit_join.xml"
+                qualifiers=""
+                type="layout" />
             <file
                 name="activity_calibrate"
                 path="/home/meanheffry/mediCal/mediCal/res/layout/activity_calibrate.xml"
@@ -12655,6 +12689,11 @@ true
             <file
                 name="activity_statistics"
                 path="/home/meanheffry/mediCal/mediCal/res/layout/activity_statistics.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_new_join"
+                path="/home/meanheffry/mediCal/mediCal/res/layout/activity_new_join.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -12675,6 +12714,11 @@ true
             <file
                 name="activity_edit_prescriptions"
                 path="/home/meanheffry/mediCal/mediCal/res/layout/activity_edit_prescriptions.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_show_join"
+                path="/home/meanheffry/mediCal/mediCal/res/layout/activity_show_join.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -12757,6 +12801,8 @@ true
                 </string>
                 <string name="title_activity_edit_prescriptions" >Edit Prescriptions
                 </string>
+                <string name="title_activity_new_join" >NewJoin
+                </string>
                 <string name="title_activity_show_join" >ShowJoin
                 </string>
                 <string name="title_activity_calibrate" >Pill Manager
@@ -12770,26 +12816,6 @@ true
                 <string name="title_activity_reminders" >Reminders
                 </string>
             </file>
-            <file
-                name="show_join"
-                path="/home/meanheffry/mediCal/mediCal/res/menu/show_join.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="activity_show_join"
-                path="/home/meanheffry/mediCal/mediCal/res/layout/activity_show_join.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="edit_join"
-                path="/home/meanheffry/mediCal/mediCal/res/menu/edit_join.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="activity_edit_join"
-                path="/home/meanheffry/mediCal/mediCal/res/layout/activity_edit_join.xml"
-                qualifiers=""
-                type="layout" />
         </source>
         <source path="/home/meanheffry/mediCal/mediCal/build/generated/res/rs/debug" />
         <source path="/home/meanheffry/mediCal/mediCal/build/generated/res/generated/debug" />

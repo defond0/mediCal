@@ -97,6 +97,19 @@ public class PillDataAccessor {
         c.close();
         return pill;
     }
+
+    public void decrementPill(long id){
+        Pill p = getPillById(id);
+
+        ContentValues pillsValues = new ContentValues();
+        pillsValues.put(DbHelper.COLUMN_TUBE, p.getTube());
+        pillsValues.put(DbHelper.COLUMN_NAME, p.getName());
+        pillsValues.put(DbHelper.COLUMN_DOSE, p.getDose());
+        pillsValues.put(DbHelper.COLUMN_LOAD, Integer.getInteger(p.getLoad())-1);
+        pillsValues.put(DbHelper.COLUMN_LAST_MODIFIED, DbHelper.getDateTimeString());
+        db.update(DbHelper.TABLE_PILL, pillsValues, DbHelper.COLUMN_ID + " = " + id , null);
+    }
+
     public List<Pill> getAllPills(){
         List<Pill> pills = new ArrayList<Pill>();
         Cursor c = db.query(DbHelper.TABLE_PILL,null,null,null,null,null,null);

@@ -20,23 +20,39 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher" />
+
             <TextView
                 android:id="@+id/banner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"/>
+                <!--android:layout_toRightOf="@+id/imageView1"-->
+
             <TextView
                 android:id="@+id/pill"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/banner"/>
             <TextView
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/pill"/>
             <Button
                 android:id="@+id/Edit"
+                android:text="Edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="onClick"/>
+                android:onClick="onClick"
+                android:layout_below="@+id/time"
+                android:layout_centerHorizontal="true"/>
         </RelativeLayout>
         <!--menu-->
         <RelativeLayout

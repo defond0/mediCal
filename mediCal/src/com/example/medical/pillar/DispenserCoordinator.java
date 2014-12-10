@@ -75,7 +75,9 @@ public class DispenserCoordinator {
                     }
                 }
                 for (int i = 0; i < joins.size(); i++) {
-                    tubeNumbers.add(Integer.parseInt(PillDA.getPillById(joins.get(i).getPillId()).getTube()));
+                    Pill p =PillDA.getPillById(joins.get(i).getPillId());
+                    PillDA.decrementPill(p.getId());
+                    tubeNumbers.add(Integer.parseInt(p.getTube()));
                 }
 //            }
 //        }

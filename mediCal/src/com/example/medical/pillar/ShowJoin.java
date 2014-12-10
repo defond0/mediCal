@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.medical.Calibrate;
 import com.example.medical.R;
 import com.example.medical.db.Pill;
 import com.example.medical.db.PillDataAccessor;
@@ -17,6 +18,8 @@ import com.example.medical.db.PrescriptionDataAccessor;
 import com.example.medical.db.PrescriptionPillJoinDataAccessor;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 public class ShowJoin extends Activity {
     private long id;
@@ -36,11 +39,16 @@ public class ShowJoin extends Activity {
             id = extras.getLong(Prescriptions.ID);
         }
         joinDataAccessor = new PrescriptionPillJoinDataAccessor(this);
+        pillDataAccessor = new PillDataAccessor(this);
+        prescriptionDataAccessor = new PrescriptionDataAccessor(this);
+        prescriptionDataAccessor.open();
+        pillDataAccessor.open();
+        joinDataAccessor.open();
         join = joinDataAccessor.getJoinbyId(id);
         pill = pillDataAccessor.getPillById(join.getPillId());
         prescription = prescriptionDataAccessor.getPrescriptionbyId(join.getPrescriptionId());
         TextView v = (TextView)findViewById(R.id.banner);
-        v.setText("Editing "+prescription.getPatient()+"'s " +pill.getName());
+        v.setText("Patient: "+prescription.getPatient());
         pillname = (TextView)findViewById(R.id.pill);
         pilltime = (TextView)findViewById(R.id.time);
         pillname.setText("Pill :"+pill.getName());
@@ -50,7 +58,7 @@ public class ShowJoin extends Activity {
 
     public void onClick(View v){
         switch(v.getId()) {
-            case R.id.edit:
+            case R.id.Edit:
                 Intent intent = new Intent(ShowJoin.this, EditJoin.class);
                 intent.putExtra(Prescriptions.ID, id);
                 startActivity(intent);
@@ -76,5 +84,17 @@ public class ShowJoin extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void toPrescriptions(View v){
+        Intent i = new Intent(this, Prescriptions.class);
+        startActivity(i);
+        this.onStop();
+    }
+
+    public void toCalibrate(View v){
+        Intent i = new Intent(this, Calibrate.class);
+        startActivity(i);
+        this.onStop();
     }
 }

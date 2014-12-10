@@ -1058,6 +1058,7 @@
     <string name="title_activity_edit_join">EditJoin</string>
     <string name="title_activity_edit_prescriptions">Edit Prescriptions</string>
     <string name="title_activity_new__prescription">New Prescription</string>
+    <string name="title_activity_new_join">NewJoin</string>
     <string name="title_activity_reminders">Reminders</string>
     <string name="title_activity_show_join">ShowJoin</string>
     <string name="title_activity_show_prescription">ShowPrescription</string>
