@@ -5390,16 +5390,16 @@ false
                     msgid="4076576682505996667" >"Tamamlandı"
                 </string>
                 <string
-                    name="abc_searchview_description_clear"
-                    msgid="3691816814315814921" >"Sorguyu temizle"
-                </string>
-                <string
                     name="abc_searchview_description_search"
                     msgid="8264924765203268293" >"Ara"
                 </string>
                 <string
                     name="abc_action_bar_up_description"
                     msgid="1594238315039666878" >"Yukarı git"
+                </string>
+                <string
+                    name="abc_searchview_description_clear"
+                    msgid="3691816814315814921" >"Sorguyu temizle"
                 </string>
                 <string
                     name="abc_searchview_description_voice"
@@ -5683,16 +5683,16 @@ false
                     msgid="7165123711973476752" >"%s-тай хуваалцах"
                 </string>
                 <string
-                    name="abc_action_bar_home_description_format"
-                    msgid="1397052879051804371" >"%1$s, %2$s"
-                </string>
-                <string
                     name="abc_activity_chooser_view_see_all"
                     msgid="7468859129482906941" >"Бүгдийг харах"
                 </string>
                 <string
                     name="abc_action_bar_home_description"
                     msgid="4600421777120114993" >"Нүүр хуудас руу шилжих"
+                </string>
+                <string
+                    name="abc_action_bar_home_description_format"
+                    msgid="1397052879051804371" >"%1$s, %2$s"
                 </string>
                 <string
                     name="abc_searchview_description_submit"

@@ -20,12 +20,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+
+
                     <ImageView
                         android:id="@+id/imageView1"
                         android:layout_width="wrap_content"
@@ -50,33 +46,38 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/patient"
                         android:layout_centerHorizontal="true"/>
-
-                    <ListView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@android:id/list"
-                        android:layout_below="@+id/rfid"
-                        android:layout_centerHorizontal="true"/>
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/activity_vertical_margin"
                         android:id="@+id/addJoin"
                         android:text="Load Pills"
                         android:onClick="onClick"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@android:id/list"/>
+                        android:layout_marginTop="6dp"
+                        android:layout_below="@id/rfid"
+                        />
                     <Button
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:layout_marginTop="6dp"
                         android:id="@+id/edit"
                         android:onClick="onClick"
                         android:text="Edit"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@id/addJoin"
-                     />
+                        android:layout_toRightOf="@id/addJoin"
+                        android:layout_below="@+id/rfid"
+                        />
 
-                </RelativeLayout>
-            </ScrollView>
+                    <ListView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@android:id/list"
+                        android:layout_below="@+id/addJoin"
+                        android:layout_gravity="center_horizontal|top"
+                       />
+
+
+
+
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
