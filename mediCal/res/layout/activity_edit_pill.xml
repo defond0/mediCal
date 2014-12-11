@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.medical.pillar.ShowPill">
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:panelHeight="30dp"
+        sothree:shadowHeight="4dp"
+        sothree:paralaxOffset="100dp"
+        sothree:dragView="@+id/drag_menu">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id ="@+id/banner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Pill"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_toRightOf="@id/imageView1"
+                />
+            <EditText
+                android:id = "@+id/addName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/banner"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:layout_toLeftOf="@+id/addName"
+                android:layout_below="@+id/banner"/>/>
+
+            <EditText
+                android:id = "@+id/addTube"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Tube#"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/addName"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tube#"
+                android:layout_toLeftOf="@+id/addTube"
+                android:layout_below="@+id/addName"/>
+
+
+            <EditText
+                android:id = "@+id/addLoad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="# of Pills"
+                android:inputType="text"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/addTube"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="# of Pills"
+                android:layout_toLeftOf="@+id/addLoad"
+                android:layout_below="@+id/addTube"/>
+
+            <EditText
+                android:id = "@+id/addDose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Dose"
+                android:inputType="text"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/addLoad" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dosage "
+                android:layout_toLeftOf="@+id/addDose"
+                android:layout_below="@+id/addLoad" />
+
+
+
+            <Button
+                android:id ="@+id/save"
+                android:layout_below="@+id/addDose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Changes"
+                android:layout_centerHorizontal="true"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id ="@+id/delete"
+                android:layout_below="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:layout_centerHorizontal="true"
+                android:onClick="onClick"/>
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/pillar_log">
+            <TextView
+                android:id="@+id/drawerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text= "Menu">
+            </TextView>
+            <Button
+                android:id="@+id/addpills"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Add New Pill"
+                android:onClick="toCalibrate"
+                android:layout_centerHorizontal="true"/>
+            <Button
+                android:id="@+id/Prescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Prescriptions/Dispensing"
+                android:onClick="toPrescriptions"
+                android:layout_below="@id/addpills"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+</RelativeLayout>

@@ -30,6 +30,11 @@ public class mediCalBle extends Service {
     private BluetoothGattCharacteristic c;
     private BluetoothManager btManager;
     private BluetoothDevice pillar;
+
+    public BluetoothAdapter getBtAdapter() {
+        return btAdapter;
+    }
+
     private BluetoothAdapter btAdapter;
     private Handler handler;
     private static final long SCAN_PERIOD = 1000;

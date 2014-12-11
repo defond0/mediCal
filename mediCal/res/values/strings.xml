@@ -16,5 +16,7 @@
     <string name="title_activity_show_join">ShowJoin</string>
     <string name="title_activity_edit_join">EditJoin</string>
     <string name="title_activity_new_join">NewJoin</string>
+    <string name="title_activity_show_pill">ShowPill</string>
+    <string name="title_activity_edit_pill">EditPill</string>
 
 </resources>

@@ -49,7 +49,7 @@ public class Prescription {
 
     @Override
     public String toString() {
-        return this.patient + " : "+ this.id;
+        return this.patient;
     }
 
 

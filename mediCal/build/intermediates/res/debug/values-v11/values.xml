@@ -7,7 +7,7 @@
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
         <!-- API 11 theme customizations can go here. -->
     </style>
-    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/res/values-v11/values.xml -->
+    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-v11/values.xml -->
     <eat-comment />
 
     <style name="Base.TextAppearance.AppCompat.Inverse">

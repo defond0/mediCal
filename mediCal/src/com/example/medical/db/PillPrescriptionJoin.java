@@ -11,6 +11,16 @@ public class PillPrescriptionJoin {
     private String time;
     private String lastModified;
 
+    public String getPillName() {
+        return pillName;
+    }
+
+    public void setPillName(String pillName) {
+        this.pillName = pillName;
+    }
+
+    private String pillName;
+
     public String getLastModified() {
         return lastModified;
     }
@@ -52,6 +62,6 @@ public class PillPrescriptionJoin {
 
     @Override
     public String toString() {
-        return "Pill Id "+ this.pillId +" Prescription Id "+ this.prescriptionId+ " at "+ this.time;
+        return this.pillName + " at "+ this.time;
     }
 }

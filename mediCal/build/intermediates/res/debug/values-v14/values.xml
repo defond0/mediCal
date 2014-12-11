@@ -8,9 +8,9 @@
 
         <!-- API 14 theme customizations can go here. -->
         <item name="android:actionBarStyle">@style/MyActionBar</item>
-        <item name="android:background">#FFC299</item>
+        <item name="android:background">#246859 </item>
     </style>
-    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/res/values-v14/values.xml -->
+    <!-- From: file:/home/meanheffry/mediCal/mediCal/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-v14/values.xml -->
     <eat-comment />
 
     <style name="Base.Theme.AppCompat" parent="Base.V14.Theme.AppCompat">

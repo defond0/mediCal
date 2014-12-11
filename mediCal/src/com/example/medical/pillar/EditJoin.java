@@ -22,6 +22,7 @@ import com.example.medical.db.Prescription;
 import com.example.medical.db.PrescriptionDataAccessor;
 import com.example.medical.db.PrescriptionPillJoinDataAccessor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EditJoin extends Activity {
@@ -58,16 +59,22 @@ public class EditJoin extends Activity {
         }
 
         currentPrescription = PresDA.getPrescriptionbyId(join.getPrescriptionId());
-
-        List<Pill> pills = PillDA.getAllPills();
-
+        Pill pill = PillDA.getPillById(join.getPillId());
+        System.out.println(""+pill);
+        ArrayList<Pill> pills = (ArrayList)PillDA.getAllPills();
+        int i=0;
+        for (int j=0;j<pills.size();j++){
+            if (pills.get(j).getId()==pill.getId()){
+                i=j;
+            }
+        }
+        System.out.println(pills);
         s = (Spinner)findViewById(R.id.pillSpinner);
         ArrayAdapter<Pill> adapter = new ArrayAdapter<Pill>(this,
                 android.R.layout.simple_spinner_item, pills);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        System.out.println(adapter + "   "+s);
         s.setAdapter(adapter);
-
+        s.setSelection(i);
 
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
 
@@ -83,10 +90,11 @@ public class EditJoin extends Activity {
 
             }
         });
-
+        String prevTime = join.getTime().replace(" ","");
+        String [] TimeArray= prevTime.split(":");
         tp = (TimePicker)findViewById(R.id.timePicker);
-
-
+        tp.setCurrentHour(Integer.parseInt(TimeArray[0]));
+        tp.setCurrentMinute(Integer.parseInt(TimeArray[1]));
 
     }
 
@@ -99,7 +107,7 @@ public class EditJoin extends Activity {
                 cur = pills.getText().toString();
                 pills.setText(cur + " "+currentPill.getName()+",");
                 currentTimes = getTime();
-                join = joinDataAccessor.createPPJoin((int)currentPill.getId(),(int)currentPrescription.getId(),parseTime(currentTimes));
+                joinDataAccessor.updateJoin(join.getId(), currentPill.getId(), currentPrescription.getId(), parseTime(currentTimes));
                 Intent intent = new Intent(EditJoin.this, ShowPrescription.class);
                 intent.putExtra(Prescriptions.PATIENT, currentPrescription.getPatient());
                 intent.putExtra(Prescriptions.RFID, currentPrescription.getRfid());

@@ -27,29 +27,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_launcher" />
-            <TextView
-                android:id="@+id/banner"
-                android:text="@string/hello_world"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/imageView1"/>
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Add Pills"
+                android:text="Edit Pill and Time"
                 android:id="@+id/textView8"
-                android:layout_below="@id/imageView1"
+                android:layout_toRightOf="@id/imageView1"
+
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Pills: "
+                android:text="Pill: "
                 android:id="@+id/pills"
                 android:layout_below="@+id/textView8"
+                android:layout_centerHorizontal="true"
                 />
 
             <Spinner
@@ -57,15 +54,17 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/pillSpinner"
                 android:layout_below="@id/pills"
-                android:spinnerMode="dialog" />
+                android:spinnerMode="dialog"
+                android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_below="@+id/pillSpinner"
-                android:text="Times:"
+                android:text="Time:"
                 android:id="@+id/pillTimes"
+                android:layout_centerHorizontal="true"
                 />
 
             <TimePicker
@@ -73,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pillTimes"
                 android:id="@+id/timePicker"
+                android:layout_centerHorizontal="true"
                 />
 
 
@@ -80,10 +80,11 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Pill"
+                android:text="Save Changes"
                 android:id="@+id/addPill"
                 android:onClick="onClick"
-                android:layout_below="@id/timePicker"/>
+                android:layout_below="@id/timePicker"
+                android:layout_centerHorizontal="true"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -91,7 +92,8 @@
                 android:onClick="onClick"
                 android:text="Delete"
                 android:id="@+id/delete"
-                android:layout_below="@id/addPill"/>
+                android:layout_below="@id/addPill"
+                android:layout_centerHorizontal="true"/>
         </RelativeLayout>
         <!--Menu-->
         <RelativeLayout

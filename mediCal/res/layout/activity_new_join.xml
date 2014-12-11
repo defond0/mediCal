@@ -42,7 +42,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Pills: "
             android:id="@+id/pills"
-            android:layout_below="@+id/textView8"
+            android:layout_below="@+id/imageView1"
             />
 
         <Spinner

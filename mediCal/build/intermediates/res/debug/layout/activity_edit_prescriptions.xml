@@ -52,18 +52,18 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/delete"
                 android:onClick="onClick"
-                android:text="DELETE"
+                android:text="Delete"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/RfidPicker"
+                android:layout_below="@+id/save"
                 />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/save"
                 android:onClick="onClick"
-                android:text="SAVE"
+                android:text="Save Changes"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/delete"/>
+                android:layout_below="@+id/RfidPicker"/>
         </RelativeLayout>
         <!--Menu options-->
         <RelativeLayout

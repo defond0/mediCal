@@ -8,7 +8,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.medical.Calibrate" >
 
-
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:panelHeight="30dp"
+        sothree:shadowHeight="4dp"
+        sothree:paralaxOffset="100dp"
+        sothree:dragView="@+id/drag_menu">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -33,16 +42,14 @@
                     android:id = "@+id/addName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="text|textCapWords"
                     android:hint="Name"
                     android:layout_centerHorizontal="true"
                     android:layout_below="@+id/banner"/>
 
                 <EditText
-                    android:id = "@+id/addTimes"
+                    android:id = "@+id/addTube"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="time|textMultiLine"
                     android:hint="Tube#"
                     android:layout_centerHorizontal="true"
                     android:layout_below="@+id/addName"/>
@@ -55,7 +62,7 @@
                     android:hint="# of Pills"
                     android:inputType="text"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/addTimes"/>
+                    android:layout_below="@+id/addTube"/>
 
                 <EditText
                     android:id = "@+id/addDose"
@@ -80,8 +87,38 @@
                 android:id="@android:id/list"
                 android:layout_below="@+id/add" />
         </RelativeLayout>
+        <!--Menu-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/pillar_log">
+            <TextView
+                android:id="@+id/drawerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text= "Menu">
+            </TextView>
+            <Button
+                android:id="@+id/addpills"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Add New Pill"
+                android:onClick="toCalibrate"
+                android:layout_centerHorizontal="true"/>
+            <Button
+                android:id="@+id/Prescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Prescriptions/Dispensing"
+                android:onClick="toPrescriptions"
+                android:layout_below="@id/addpills"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
 
-
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
 </RelativeLayout>
 <!-- From: file:/home/meanheffry/mediCal/mediCal/res/layout/activity_calibrate.xml -->

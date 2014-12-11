@@ -24,10 +24,13 @@ public class PillDataAccessor {
             DbHelper.COLUMN_PILLS,
             DbHelper.COLUMN_TUBE,
             DbHelper.COLUMN_LOAD
+
     };
+    private Context pContext;
 
     public PillDataAccessor(Context context){
         helper = new DbHelper(context);
+        pContext=context;
     }
 
     public void open() throws SQLException{
@@ -100,12 +103,21 @@ public class PillDataAccessor {
 
     public void decrementPill(long id){
         Pill p = getPillById(id);
-
         ContentValues pillsValues = new ContentValues();
         pillsValues.put(DbHelper.COLUMN_TUBE, p.getTube());
         pillsValues.put(DbHelper.COLUMN_NAME, p.getName());
         pillsValues.put(DbHelper.COLUMN_DOSE, p.getDose());
         pillsValues.put(DbHelper.COLUMN_LOAD, Integer.getInteger(p.getLoad())-1);
+        pillsValues.put(DbHelper.COLUMN_LAST_MODIFIED, DbHelper.getDateTimeString());
+        db.update(DbHelper.TABLE_PILL, pillsValues, DbHelper.COLUMN_ID + " = " + id , null);
+    }
+
+    public void updatePill(long id, String name, String tube, String dose, String load){
+        ContentValues pillsValues = new ContentValues();
+        pillsValues.put(DbHelper.COLUMN_TUBE, tube);
+        pillsValues.put(DbHelper.COLUMN_NAME, name);
+        pillsValues.put(DbHelper.COLUMN_DOSE, dose);
+        pillsValues.put(DbHelper.COLUMN_LOAD, load);
         pillsValues.put(DbHelper.COLUMN_LAST_MODIFIED, DbHelper.getDateTimeString());
         db.update(DbHelper.TABLE_PILL, pillsValues, DbHelper.COLUMN_ID + " = " + id , null);
     }
@@ -122,4 +134,32 @@ public class PillDataAccessor {
         c.close();
         return pills;
     }
+
+    public void deletePillSafe(Long id) {
+        String[] whereArgs = new String[]{String.valueOf(id)};
+        Cursor c=db.query(DbHelper.TABLE_PILL, null,
+                DbHelper.COLUMN_ID + " = ?", whereArgs, null, null, null);
+        c.moveToFirst();
+        if (!c.isAfterLast()) {
+            Pill p = cursorToPill(c);
+            PrescriptionPillJoinDataAccessor JDA = new PrescriptionPillJoinDataAccessor(pContext);
+            JDA.open();
+            ArrayList<PillPrescriptionJoin> joins = (ArrayList) JDA.getAllJoins();
+            for (int j = 0; j < joins.size(); j++) {
+                if (joins.get(j).getPillId() == id) {
+                    System.out.println("Deleting join " + joins.get(j) + " associated with " + p.getName());
+                    whereArgs = new String[]{String.valueOf(joins.get(j).getId())};
+                    db.delete(DbHelper.TABLE_JOIN_PRESCRIPTION_PILLS, DbHelper.COLUMN_ID + " =?", whereArgs);
+                }
+            }
+            System.out.println("Deleted Pill " + p);
+            whereArgs = new String[]{String.valueOf(p.getId())};
+            db.delete(DbHelper.TABLE_PILL, DbHelper.COLUMN_ID + " =?", whereArgs);
+        }
+        else{
+            System.out.println("da fuck?");
+        }
+
+    }
+
 }

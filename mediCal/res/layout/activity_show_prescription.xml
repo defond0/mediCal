@@ -54,7 +54,9 @@
                         android:text="Load Pills"
                         android:onClick="onClick"
                         android:layout_marginTop="6dp"
-                        android:layout_below="@id/rfid"
+                        android:layout_below="@+id/edit"
+                        android:layout_centerHorizontal="true"
+
                         />
                     <Button
                         android:layout_height="wrap_content"
@@ -63,9 +65,11 @@
                         android:id="@+id/edit"
                         android:onClick="onClick"
                         android:text="Edit"
-                        android:layout_toRightOf="@id/addJoin"
+                        android:layout_centerHorizontal="true"
                         android:layout_below="@+id/rfid"
                         />
+                        <!--android:layout_toRightOf="@id/addJoin"-->
+
 
                     <ListView
                         android:layout_width="wrap_content"

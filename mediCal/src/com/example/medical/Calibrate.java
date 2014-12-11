@@ -1,25 +1,30 @@
 package com.example.medical;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.example.medical.db.Pill;
 import com.example.medical.db.PillDataAccessor;
+import com.example.medical.db.PillPrescriptionJoin;
+import com.example.medical.pillar.Prescriptions;
+import com.example.medical.pillar.ShowJoin;
+import com.example.medical.pillar.ShowPill;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Calibrate extends ListActivity {
     private PillDataAccessor PDA;
-    public EditText addName;
-    public EditText addTube;
-    public EditText addDose;
-    public EditText addLoad;
-    public EditText deleteName;
+    public EditText addName,addTube,addDose,addLoad;
+    private ArrayList<Pill> pills;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,7 @@ public class Calibrate extends ListActivity {
 
 
 
-        List<Pill> pills = PDA.getAllPills();
+        pills = (ArrayList)PDA.getAllPills();
 
         ArrayAdapter<Pill> adapter = new ArrayAdapter<Pill>(this,
                 android.R.layout.simple_list_item_1, pills);
@@ -42,7 +47,7 @@ public class Calibrate extends ListActivity {
     public void onClick(View v){
         addName = (EditText)findViewById(R.id.addName);
         addDose = (EditText)findViewById(R.id.addDose);
-        addTube = (EditText)findViewById(R.id.addTimes);
+        addTube = (EditText)findViewById(R.id.addTube);
         addLoad = (EditText)findViewById(R.id.addLoad);
         Pill pill = null;
         ArrayAdapter<Pill> adapter = (ArrayAdapter<Pill>) getListAdapter();
@@ -54,15 +59,8 @@ public class Calibrate extends ListActivity {
                 adapter.add(pill);
                 adapter.notifyDataSetChanged();
                 break;
-            case R.id.delete:
-                pill = PDA.getPillByName(deleteName.getText().toString());
-                adapter.remove(pill);
-                PDA.deletePill(pill);
-                List<Pill> pills = PDA.getAllPills();
-                ArrayAdapter<Pill> adapter0 = new ArrayAdapter<Pill>(this,
-                        android.R.layout.simple_list_item_1, pills);
-                setListAdapter(adapter0);
-                break;
+
+
         }
 
     }
@@ -73,6 +71,19 @@ public class Calibrate extends ListActivity {
 		getMenuInflater().inflate(R.menu.calibrate, menu);
 		return true;
 	}
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        // TODO Auto-generated method stub
+        super.onListItemClick(l, v, position, id);
+        System.out.println("CLICKED "+pills.get(position));
+        Pill p =pills.get(position);
+        Intent intent = new Intent(Calibrate.this, ShowPill.class);
+        intent.putExtra(Prescriptions.ID, p.getId());
+        startActivity(intent);
+        this.onStop();
+
+    }
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -85,4 +96,16 @@ public class Calibrate extends ListActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+    public void toPrescriptions(View v){
+        Intent i = new Intent(this, Prescriptions.class);
+        startActivity(i);
+        this.onStop();
+    }
+
+    public void toCalibrate(View v){
+        Intent i = new Intent(this, Calibrate.class);
+        startActivity(i);
+        this.onStop();
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.medical.pillar;
 
 import android.app.ListActivity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -78,7 +79,13 @@ public class Prescriptions extends ListActivity {
                 pillar.enableDispensing();
                 break;
             case R.id.bleConnect:
-                pillar.bleSetup();
+                if (pillar.getBtAdapter() == null || !pillar.getBtAdapter().isEnabled()) {
+                    Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                    startActivityForResult(enableBtIntent, 3);
+                }
+                else {
+                    pillar.bleSetup();
+                }
                 break;
         }
     }

@@ -109,6 +109,14 @@
             android:name="com.example.medical.pillar.NewJoin"
             android:label="@string/title_activity_new_join" >
         </activity>
+        <activity
+            android:name="com.example.medical.pillar.ShowPill"
+            android:label="@string/title_activity_show_pill" >
+        </activity>
+        <activity
+            android:name="com.example.medical.pillar.EditPill"
+            android:label="@string/title_activity_edit_pill" >
+        </activity>
     </application>
 
 </manifest>

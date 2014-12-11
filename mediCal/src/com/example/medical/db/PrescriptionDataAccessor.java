@@ -103,7 +103,6 @@ public class PrescriptionDataAccessor {
             Prescription p = cursorToPrescription(c);
             PrescriptionPillJoinDataAccessor JDA = new PrescriptionPillJoinDataAccessor(context);
             JDA.open();
-            JDA.getAllJoins();
             ArrayList<PillPrescriptionJoin> joins = (ArrayList) JDA.getAllJoins();
             for (int j = 0; j < joins.size(); j++) {
                 if (joins.get(j).getPrescriptionId() == id) {

@@ -63,6 +63,7 @@ public class EditPrescriptions extends Activity {
             case R.id.delete:
                 prescriptionDA.deletePrescriptionSafe(prescriptionId);
                 startActivity(intent);
+                this.onStop();
                 break;
             case R.id.save:
                 switch (np.getValue()){

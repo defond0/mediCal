@@ -20,7 +20,6 @@
         android:required="true" />
 
     <application
-
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -109,6 +108,14 @@
         <activity
             android:name=".pillar.NewJoin"
             android:label="@string/title_activity_new_join" >
+        </activity>
+        <activity
+            android:name=".pillar.ShowPill"
+            android:label="@string/title_activity_show_pill" >
+        </activity>
+        <activity
+            android:name=".pillar.EditPill"
+            android:label="@string/title_activity_edit_pill" >
         </activity>
     </application>
 
