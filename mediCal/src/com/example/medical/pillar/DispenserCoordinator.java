@@ -28,9 +28,9 @@ public class DispenserCoordinator {
 
 
 
-    private final byte[] rfid1 = new byte[]{0x1A, (byte)0xE2, 0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
+    private final byte[] rfid1 =new byte[]{0x1A, (byte)0xE2, 0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
 
-    private final byte[] rfid2 = new byte[]{(byte)0xAA, 0x79, (byte)0x9B, 0x23, 0x00, 0x00, 0x00, 0x3B};
+    private final byte[] rfid2 = new byte[]{(byte)0x4A, (byte)0x8B, (byte)0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
 
 
     public DispenserCoordinator(Context context){
@@ -62,13 +62,12 @@ public class DispenserCoordinator {
         ArrayList<Integer> tubeNumbers = new ArrayList<Integer>();
         ArrayList<PillPrescriptionJoin> joins = new ArrayList<PillPrescriptionJoin>();
         long prescriptionId=0;
-//        for (int j=0; j<rfids.size();j++) {
-//            if (Arrays.equals(rfids.get(j), b)){
-//                System.out.println("It recognizes that this is one we want");
                 for (int i = 0; i < Prescriptions.size(); i++) {
                     System.out.println("Looking for the prescription this tag belongs to");
+                    for (int j =0; j<b.length;j++){
+                        System.out.print(b[j]);
+                    }
                     if (Arrays.equals(Prescriptions.get(i).getRfid(), b)){
-
                         System.out.println("We found the Prescription");
                         prescriptionId = Prescriptions.get(i).getId();
                         joins = (ArrayList) JoinDA.getJoinsByPrescriptionId((int) prescriptionId);
@@ -76,8 +75,7 @@ public class DispenserCoordinator {
                 }
                 for (int i = 0; i < joins.size(); i++) {
                     Pill p =PillDA.getPillById(joins.get(i).getPillId());
-                    PillDA.decrementPill(p.getId());
-                    tubeNumbers.add(Integer.parseInt(p.getTube()));
+                    tubeNumbers.add(Integer.parseInt(p.getTube())-1);
                 }
 //            }
 //        }

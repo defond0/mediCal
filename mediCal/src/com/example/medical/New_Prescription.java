@@ -2,6 +2,7 @@ package com.example.medical;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,11 +24,12 @@ import com.example.medical.db.PrescriptionDataAccessor;
 import com.example.medical.db.PrescriptionPillJoinDataAccessor;
 import com.example.medical.pillar.NewJoin;
 import com.example.medical.pillar.Prescriptions;
+import com.example.medical.pillar.Pullup;
 
 import java.util.List;
 
 
-public class New_Prescription extends Activity  {
+public class New_Prescription extends Activity implements Pullup.OnFragmentInteractionListener  {
     private PrescriptionDataAccessor PresDA;
     private PillDataAccessor PillDA;
     private PrescriptionPillJoinDataAccessor JoinDA;
@@ -97,10 +99,10 @@ public class New_Prescription extends Activity  {
         System.out.println(np.getValue());
         switch (np.getValue()){
             case 1:
-                b = new byte[]{0x1A, (byte)0xE2, 0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
+                b =  new byte[]{0x1A, (byte)0xE2, 0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
             break;
             case 2:
-                b = new byte[]{(byte)0xAA, 0x79, (byte)0x9B, 0x23, 0x00, 0x00, 0x00, 0x3B};
+                b = new byte[]{(byte)0x4A, (byte)0x8B, (byte)0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x00, 0x3B};
             break;
         }
         return b;
@@ -130,4 +132,8 @@ public class New_Prescription extends Activity  {
         this.onStop();
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }

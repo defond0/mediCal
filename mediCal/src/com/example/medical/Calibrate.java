@@ -2,6 +2,7 @@ package com.example.medical;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,13 +15,14 @@ import com.example.medical.db.Pill;
 import com.example.medical.db.PillDataAccessor;
 import com.example.medical.db.PillPrescriptionJoin;
 import com.example.medical.pillar.Prescriptions;
+import com.example.medical.pillar.Pullup;
 import com.example.medical.pillar.ShowJoin;
 import com.example.medical.pillar.ShowPill;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calibrate extends ListActivity {
+public class Calibrate extends ListActivity implements Pullup.OnFragmentInteractionListener  {
     private PillDataAccessor PDA;
     public EditText addName,addTube,addDose,addLoad;
     private ArrayList<Pill> pills;
@@ -107,5 +109,10 @@ public class Calibrate extends ListActivity {
         Intent i = new Intent(this, Calibrate.class);
         startActivity(i);
         this.onStop();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

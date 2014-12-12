@@ -2,6 +2,7 @@ package com.example.medical.pillar;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +14,7 @@ import com.example.medical.R;
 import com.example.medical.db.Pill;
 import com.example.medical.db.PillDataAccessor;
 
-public class EditPill extends Activity {
+public class EditPill extends Activity implements Pullup.OnFragmentInteractionListener  {
     public EditText addName,addTube,addDose,addLoad;
     private PillDataAccessor pda;
     private Pill pill;
@@ -89,5 +90,10 @@ public class EditPill extends Activity {
         Intent i = new Intent(this, Calibrate.class);
         startActivity(i);
         this.onStop();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

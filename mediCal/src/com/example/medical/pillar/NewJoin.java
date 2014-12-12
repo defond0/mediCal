@@ -2,6 +2,7 @@ package com.example.medical.pillar;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +26,7 @@ import com.example.medical.db.PrescriptionPillJoinDataAccessor;
 
 import java.util.List;
 
-public class NewJoin extends Activity {
+public class NewJoin extends Activity implements Pullup.OnFragmentInteractionListener  {
     private PrescriptionDataAccessor PresDA;
     private PillDataAccessor PillDA;
     private PrescriptionPillJoinDataAccessor JoinDA;
@@ -161,5 +162,10 @@ public class NewJoin extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

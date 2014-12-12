@@ -28,11 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher" />
+
         <TextView
             android:id="@+id/banner"
             android:layout_width="wrap_content"
@@ -67,7 +63,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/pillar_log">
+          >
 
                 <TextView
                     android:id="@+id/drawerText"
@@ -93,6 +89,14 @@
                     android:onClick="toPrescriptions"
                     android:layout_below="@id/addpills"
                     android:layout_centerHorizontal="true"/>
+                <Button
+                    android:id="@+id/mars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Go to MAR Manager"
+                    android:layout_below="@+id/Prescription"
+                    android:onClick="toMarsManager"
+                    android:layout_centerHorizontal="true"/>
 
 
                 <View
@@ -101,7 +105,7 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="80dp"
                     android:background="@android:color/holo_blue_light"
-                    android:layout_below="@id/Prescription"
+                    android:layout_below="@id/mars"
                     android:layout_centerHorizontal="true"/>
 
 

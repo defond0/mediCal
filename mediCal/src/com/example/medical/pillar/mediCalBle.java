@@ -9,11 +9,13 @@ import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothManager;
+import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
+import android.util.Log;
 
 import com.example.medical.db.Pill;
 
@@ -25,7 +27,18 @@ public class mediCalBle extends Service {
 
 
 
-    private boolean scanning, connected;
+
+    private boolean scanning;
+
+    public boolean isConnected() {
+        return connected;
+    }
+
+    public void setConnected(boolean connected) {
+        this.connected = connected;
+    }
+
+    private boolean connected;
     private BluetoothGattService s;
     private BluetoothGattCharacteristic c;
     private BluetoothManager btManager;
@@ -51,20 +64,37 @@ public class mediCalBle extends Service {
     }
 
     private final BluetoothGattCallback btCb = new BluetoothGattCallback() {
+
+        @Override
+        public void onConnectionStateChange(BluetoothGatt gatt, int status,
+                                            int newState) {
+            String intentAction;
+            if (newState == BluetoothProfile.STATE_CONNECTED) {
+               connected = true;
+            } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
+              connected =false;
+            }
+        }
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic btchar){
-            System.out.println("CALLBACK");
-            if(System.currentTimeMillis()-lastCallbackTime>=5000) {
+
+            long dif = Math.abs(System.currentTimeMillis()-lastCallbackTime);
+            System.out.println("Callback dif "+dif);
+            if(dif>=2000) {
                 c = btchar;
                 byte[] b = c.getValue();
                 ArrayList<Integer> pillsToDispense = dc.dispense(b);
-                System.out.println("We want to dispense " + pillsToDispense);
                 for (int i = 0; i < pillsToDispense.size(); i++) {
-                    dispenseTube(i);
+                    int dispensing = pillsToDispense.get(i);
+                    System.out.println("Dispensing " + dispensing);
+                    dispenseTube(dispensing);
+                    lastCallbackTime = System.currentTimeMillis();
                 }
             }
             else{
                 System.out.println("BOUNCE");
+                System.out.println("Callback bounce dif "+dif);
+                lastCallbackTime = System.currentTimeMillis();
             }
 
 
@@ -110,19 +140,21 @@ public class mediCalBle extends Service {
 
     public void bleSetup(){
         System.out.println("Beginning to Connect");
+        Log.v("Connect","Now Beginning to Connect");
         gatt = pillar.connectGatt(this, true, btCb);
-        gatt.discoverServices();
         connected = true;
     }
 
     public void enableDispensing(){
-        System.out.println("Now Setting Notifications on");
+        Log.v("Dispensing","Now Setting Dispensing on");
         if (gatt.discoverServices()) {
             boolean write = this.enableNotification();
             while (write == false) {
                 write = this.enableNotification();
             }
             System.out.println("Success " + write);
+            Log.v("dispense","Success " + write);
+
         }
 
 
@@ -137,6 +169,7 @@ public class mediCalBle extends Service {
     }
 
     private boolean enableNotification(){
+
         if (gatt == null||btAdapter==null) {
             System.out.println("no setup");
             return false;
@@ -144,6 +177,7 @@ public class mediCalBle extends Service {
         s = gatt.getService(serviceUUID);
         if (s == null) {
             System.out.println("Null Service");
+            Log.v("nullservice","Null Service");
             return false;
         }
         c = s.getCharacteristic(rfidUUID);
@@ -215,9 +249,10 @@ public class mediCalBle extends Service {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    if((device.getName()!=null)&&(device.getName().toLowerCase().equals("medical ble"))
-                            && connected==false){
+
+                    if(device.getAddress().equals("DA:58:0F:53:19:23")&& connected==false){
                         pillar = device;
+                        System.out.println("DEVICE "+ device.getAddress());
                     }
                 }
             }).start();

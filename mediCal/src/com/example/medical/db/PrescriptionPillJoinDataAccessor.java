@@ -72,7 +72,7 @@ public class PrescriptionPillJoinDataAccessor{
         ppJoin.setPrescriptionId(c.getInt(3));
         ppJoin.setTime(c.getString(4));
         Pill p = pda.getPillById(ppJoin.getPillId());
-        System.out.println(ppJoin.getPillId());
+
         ppJoin.setPillName(p.getName());
         pda.close();
         return ppJoin;

@@ -3,6 +3,7 @@ package com.example.medical.pillar;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,9 +24,9 @@ import com.example.medical.db.PrescriptionPillJoinDataAccessor;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ShowPrescription extends ListActivity {
+public class ShowPrescription extends ListActivity implements Pullup.OnFragmentInteractionListener  {
     private final static byte[] tag1 = new byte[]{0x1A, (byte)0xE2, 0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
-    private final static byte[] tag2 = new byte[]{(byte)0xAA, 0x79, (byte)0x9B, 0x23, 0x00, 0x00, 0x00, 0x3B};
+    private final static byte[] tag2 = new byte[]{(byte)0x4A, (byte)0x8B, (byte)0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
     private TextView Rfid;
     private TextView Patient;
     private TextView banner;
@@ -130,5 +131,10 @@ public class ShowPrescription extends ListActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+        System.out.println("Fragment uri "+ uri);
     }
 }

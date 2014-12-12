@@ -2,6 +2,7 @@ package com.example.medical.pillar;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,9 +17,9 @@ import com.example.medical.db.PrescriptionDataAccessor;
 
 import java.util.Arrays;
 
-public class EditPrescriptions extends Activity {
+public class EditPrescriptions extends Activity  implements Pullup.OnFragmentInteractionListener {
     private final static byte[] tag1 = new byte[]{0x1A, (byte)0xE2, 0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
-    private final static byte[] tag2 = new byte[]{(byte)0xAA, 0x79, (byte)0x9B, 0x23, 0x00, 0x00, 0x00, 0x3B};
+    private final static byte[] tag2 = new byte[]{(byte)0x4A, (byte)0x8B, (byte)0x41, (byte)0xD9, 0x00, 0x00, 0x00, 0x3B};
     private NumberPicker np;
     private EditText etPatient;
     private TextView banner;
@@ -118,6 +119,8 @@ public class EditPrescriptions extends Activity {
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
-
+    }
 }

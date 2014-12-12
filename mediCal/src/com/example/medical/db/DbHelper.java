@@ -18,6 +18,20 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_LAST_MODIFIED = "lastmodified";
 
+    public static final String TABLE_MARS = "mars";
+    public static final String COLUMN_FACILITY_NAME = "facility";
+    public static final String COLUMN_STARTDATE = "startdate";
+    public static final String COLUMN_ENDDATE = "enddate";
+    public static final String COLUMN_PHYSICIAN = "physician";
+    public static final String COLUMN_COMMENTS = "comments";
+
+    public static final String TABLE_MARS_ENTRY = "marsentry";
+    public static final String COLUMN_MARS = "marsid";
+    public static final String COLUMN_TIME = "timeAdministered";
+    public static final String COLUMN_PERSON = "person";
+    public static final String COLUMN_MED = "med";
+    public static final String COLUMN_DOSAGE = "dosage";
+
     public static final String TABLE_PILL = "pill";
     public static final String COLUMN_TUBE = "tube";
     public static final String COLUMN_NAME = "name";
@@ -36,6 +50,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pill.db";
     private static final int DATABASE_VERSION = 1;
+
+
 
     private static final String PILL_DATABASE_CREATE =
             "CREATE TABLE " + TABLE_PILL + " ( "
@@ -61,6 +77,27 @@ public class DbHelper extends SQLiteOpenHelper {
                     + COLUMN_PRESCRIPTION_ID + " INTEGER REFERENCES "+TABLE_PRESCRIPTION+", "
                     + COLUMN_TIMES + " TEXT NOT NULL "+");";
 
+    private static final String MARS_CREATE =
+            "CREATE TABLE "+TABLE_MARS + " ( "
+            + COLUMN_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + COLUMN_LAST_MODIFIED+ " TEXT NOT NULL, "
+            + COLUMN_FACILITY_NAME+ " TEXT NOT NULL, "
+            + COLUMN_STARTDATE+ " TEXT NOT NULL, "
+            + COLUMN_ENDDATE+ " TEXT NOT NULL, "
+            + COLUMN_PHYSICIAN+ " TEXT NOT NULL, "
+            + COLUMN_COMMENTS +" TEXT NOT NULL "+");";
+
+    private static final String MARS_ENTRY_CREATE =
+            "CREATE TABLE "+TABLE_MARS_ENTRY + " ( "
+                    + COLUMN_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + COLUMN_LAST_MODIFIED+ " TEXT NOT NULL, "
+                    + COLUMN_MARS+ " INTEGER REFERENCES "+TABLE_MARS+", "
+                    + COLUMN_TIME+ " TEXT NOT NULL, "
+                    + COLUMN_PERSON+ " TEXT NOT NULL, "
+                    + COLUMN_MED+ " TEXT NOT NULL, "
+                    + COLUMN_DOSAGE +" TEXT NOT NULL "+");";
+
+
 
     public DbHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -71,6 +108,8 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(PILL_DATABASE_CREATE);
         db.execSQL(PRESCRIPTION_DATABASE_CREATE);
         db.execSQL(PRESCRIPTION_PILL_JOIN_DATABASE_CREATE);
+        db.execSQL(MARS_CREATE);
+        db.execSQL(MARS_ENTRY_CREATE);
     }
 
     @Override

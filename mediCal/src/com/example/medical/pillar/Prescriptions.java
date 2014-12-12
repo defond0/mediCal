@@ -6,6 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.view.Menu;
@@ -13,16 +14,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.medical.Calibrate;
 import com.example.medical.New_Prescription;
 import com.example.medical.R;
+import com.example.medical.db.MARManager;
 import com.example.medical.db.Prescription;
 import com.example.medical.db.PrescriptionDataAccessor;
 
 import java.util.List;
 
-public class Prescriptions extends ListActivity {
+public class Prescriptions extends ListActivity{
     private PrescriptionDataAccessor PDA;
     private mediCalBle pillar;
     private boolean bound;
@@ -76,12 +79,22 @@ public class Prescriptions extends ListActivity {
                 this.onStop();
                 break;
             case R.id.bleNotify:
-                pillar.enableDispensing();
+                if(pillar.isConnected()) {
+                    pillar.enableDispensing();
+                }
+                else{
+                    TextView t = (TextView)findViewById(R.id.drawerText);
+                    t.setText("Connect First");
+                }
                 break;
             case R.id.bleConnect:
                 if (pillar.getBtAdapter() == null || !pillar.getBtAdapter().isEnabled()) {
                     Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                     startActivityForResult(enableBtIntent, 3);
+                }
+                else if(pillar.isConnected()){
+                    TextView t = (TextView)findViewById(R.id.drawerText);
+                    t.setText("Already Connected");
                 }
                 else {
                     pillar.bleSetup();
@@ -121,6 +134,13 @@ public class Prescriptions extends ListActivity {
         this.onStop();
     }
 
+    public void toMarsManager(View v){
+        System.out.println("Boo");
+        Intent i = new Intent(this, MARManager.class);
+        startActivity(i);
+        this.onStop();
+    }
+
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         // TODO Auto-generated method stub
@@ -153,4 +173,6 @@ public class Prescriptions extends ListActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+
 }

@@ -1051,6 +1051,7 @@
     <string name="action_settings">Settings</string>
     <string name="app_name">mediCal</string>
     <string name="calibratebutton">"Calibrate"</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
     <string name="reminderbutton">Reminders</string>
     <string name="statsbutton">Statistics </string>
@@ -1058,10 +1059,14 @@
     <string name="title_activity_edit_join">EditJoin</string>
     <string name="title_activity_edit_pill">EditPill</string>
     <string name="title_activity_edit_prescriptions">Edit Prescriptions</string>
+    <string name="title_activity_marmanager">MARManager</string>
+    <string name="title_activity_message">Message</string>
     <string name="title_activity_new__prescription">New Prescription</string>
     <string name="title_activity_new_join">NewJoin</string>
+    <string name="title_activity_new_mars_report">NewMARsReport</string>
     <string name="title_activity_reminders">Reminders</string>
     <string name="title_activity_show_join">ShowJoin</string>
+    <string name="title_activity_show_marreport">ShowMARReport</string>
     <string name="title_activity_show_pill">ShowPill</string>
     <string name="title_activity_show_prescription">ShowPrescription</string>
     <string name="title_activity_statistics">BleDemo</string>

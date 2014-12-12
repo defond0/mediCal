@@ -2,6 +2,7 @@ package com.example.medical.pillar;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +26,7 @@ import com.example.medical.db.PrescriptionPillJoinDataAccessor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EditJoin extends Activity {
+public class EditJoin extends Activity implements Pullup.OnFragmentInteractionListener {
     private long id;
     private PrescriptionDataAccessor PresDA;
     private PillDataAccessor PillDA;
@@ -178,5 +179,10 @@ public class EditJoin extends Activity {
         Intent i = new Intent(this, Calibrate.class);
         startActivity(i);
         this.onStop();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
